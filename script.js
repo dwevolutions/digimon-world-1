@@ -153,9 +153,9 @@ class DigimonChart {
     this.cursorAtivo = false;
     this.animInterval = null;
 
-    this.moveSound = new Audio("/sounds/blop.ogg");
+    this.moveSound = new Audio("sounds/blop.ogg");
     this.moveSound.volume = 0.4; // ajuste se quiser
-    this.selectSound = new Audio("/sounds/click.ogg");
+    this.selectSound = new Audio("sounds/click.ogg");
     this.selectSound.volume = 0.5; // ajuste se quiser
     this.soundEnabled = localStorage.getItem("soundEnabled") !== "false";
     
@@ -545,3 +545,4 @@ window.addEventListener("resize", autoResizeMenuText);
 /* =========================
    detonado
 ========================= */
+
