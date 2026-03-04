@@ -479,11 +479,11 @@ function setupMenuSystem() {
       // 🔄 Troca botão claro/escuro
       buttons.forEach(b => {
         b.classList.remove("active");
-        b.querySelector("img").src = "/images/menu_escuro.png";
+        b.querySelector("img").src = "images/menu_escuro.png";
       });
 
       btn.classList.add("active");
-      btn.querySelector("img").src = "/images/menu_claro.png";
+      btn.querySelector("img").src = "images/menu_claro.png";
 
       const page = btn.dataset.page;
 
@@ -491,7 +491,7 @@ if (page === "inicio") {
 
   window.chartSystem.active = true; 
 
-  chart.src = "/images/chart.png";
+  chart.src = "images/chart.png";
   slots.style.display = "block";
   cursor.style.display = "block";
   soundBtn.style.display = "block";
@@ -505,7 +505,7 @@ if (page === "deto") {
   slots.style.display = "none";
   cursor.style.display = "none";
   soundBtn.style.display = "none";
-  chart.src = "/images/conteudo.png";
+  chart.src = "images/conteudo.png";
   detoContent.style.display = "block";
 }
 
