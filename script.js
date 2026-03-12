@@ -70,71 +70,1096 @@ const slotsData = [
 ];
 
 const digimonSprites = [
-  { idle: "sprites/botamon.webp", anim: "sprites/botamon2.webp" },
-  { idle: "sprites/poyomon.webp", anim: "sprites/poyomon2.webp" },
-  { idle: "sprites/punimon.webp", anim: "sprites/punimon2.webp" },
-  { idle: "sprites/yuramon.webp", anim: "sprites/yuramon2.webp" },
-  { idle: "sprites/koromon.webp", anim: "sprites/koromon2.webp" },
-  { idle: "sprites/tokomon.webp", anim: "sprites/tokomon2.webp" },
-  { idle: "sprites/tsunomon.webp", anim: "sprites/tsunomon2.webp" },
-  { idle: "sprites/tanemon.webp", anim: "sprites/tanemon2.webp" },
-  { idle: "sprites/agumon.webp", anim: "sprites/agumon2.webp" },
-  { idle: "sprites/gabumon.webp", anim: "sprites/gabumon2.webp" },
-  { idle: "sprites/patamon.webp", anim: "sprites/patamon2.webp" },
-  { idle: "sprites/elecmon.webp", anim: "sprites/elecmon2.webp" },
-  { idle: "sprites/piyomon.webp", anim: "sprites/piyomon2.webp" },
-  { idle: "sprites/kunemon.webp", anim: "sprites/kunemon2.webp" },
-  { idle: "sprites/palmon.webp", anim: "sprites/palmon2.webp" },
-  { idle: "sprites/betamon.webp", anim: "sprites/betamon2.webp" },
-  { idle: "sprites/penguinmon.webp", anim: "sprites/penguinmon2.webp" },
-  { idle: "sprites/greymon.webp", anim: "sprites/greymon2.webp" },
-  { idle: "sprites/monochromon.webp", anim: "sprites/monochromon2.webp" },
-  { idle: "sprites/ogremon.webp", anim: "sprites/ogremon2.webp" },
-  { idle: "sprites/airdramon.webp", anim: "sprites/airdramon2.webp" },
-  { idle: "sprites/kuwagamon.webp", anim: "sprites/kuwagamon2.webp" },
-  { idle: "sprites/whamon.webp", anim: "sprites/whamon2.webp" },
-  { idle: "sprites/frigimon.webp", anim: "sprites/frigimon2.webp" },
-  { idle: "sprites/nanimon.webp", anim: "sprites/nanimon2.webp" },
-  { idle: "sprites/meramon.webp", anim: "sprites/meramon2.webp" },
-  { idle: "sprites/drimogemon.webp", anim: "sprites/drimogemon2.webp" },
-  { idle: "sprites/leomon.webp", anim: "sprites/leomon2.webp" },
-  { idle: "sprites/kokatorimon.webp", anim: "sprites/kokatorimon2.webp" },
-  { idle: "sprites/vegiemon.webp", anim: "sprites/vegiemon2.webp" },
-  { idle: "sprites/shellmon.webp", anim: "sprites/shellmon2.webp" },
-  { idle: "sprites/mojyamon.webp", anim: "sprites/mojyamon2.webp" },
-  { idle: "sprites/birdramon.webp", anim: "sprites/birdramon2.webp" },
-  { idle: "sprites/tyrannomon.webp", anim: "sprites/tyrannomon2.webp" },
-  { idle: "sprites/angemon.webp", anim: "sprites/angemon2.webp" },
-  { idle: "sprites/unimon.webp", anim: "sprites/unimon2.webp" },
-  { idle: "sprites/ninjamon.webp", anim: "sprites/ninjamon2.webp" },
-  { idle: "sprites/coelamon.webp", anim: "sprites/coelamon2.webp" },
-  { idle: "sprites/numemon.webp", anim: "sprites/numemon2.webp" },
-  { idle: "sprites/centarumon.webp", anim: "sprites/centarumon2.webp" },
-  { idle: "sprites/devimon.webp", anim: "sprites/devimon2.webp" },
-  { idle: "sprites/bakemon.webp", anim: "sprites/bakemon2.webp" },
-  { idle: "sprites/kabuterimon.webp", anim: "sprites/kabuterimon2.webp" },
-  { idle: "sprites/seadramon.webp", anim: "sprites/seadramon2.webp" },
-  { idle: "sprites/garurumon.webp", anim: "sprites/garurumon2.webp" },
-  { idle: "sprites/sukamon.webp", anim: "sprites/sukamon2.webp" },
-  { idle: "sprites/metalgreymon.webp", anim: "sprites/metalgreymon2.webp" },
-  { idle: "sprites/skullgreymon.webp", anim: "sprites/skullgreymon2.webp" },
-  { idle: "sprites/giromon.webp", anim: "sprites/giromon2.webp" },
-  { idle: "sprites/hkabuterimon.webp", anim: "sprites/hkabuterimon2.webp" },
-  { idle: "sprites/metalmamemon.webp", anim: "sprites/metalmamemon2.webp" },
-  { idle: "sprites/megaseadramon.webp", anim: "sprites/megaseadramon2.webp" },
-  { idle: "sprites/vademon.webp", anim: "sprites/vademon2.webp" },
-  { idle: "sprites/etemon.webp", anim: "sprites/etemon2.webp" },
-  { idle: "sprites/andromon.webp", anim: "sprites/andromon2.webp" },
-  { idle: "sprites/megadramon.webp", anim: "sprites/megadramon2.webp" },
-  { idle: "sprites/phoenixmon.webp", anim: "sprites/phoenixmon2.webp" },
-  { idle: "sprites/piximon.webp", anim: "sprites/piximon2.webp" },
-  { idle: "sprites/mamemon.webp", anim: "sprites/mamemon2.webp" },
-  { idle: "sprites/monzaemon.webp", anim: "sprites/monzaemon2.webp" },
-  { idle: "sprites/digitamamon.webp", anim: "sprites/digitamamon2.webp" },
-  { idle: "sprites/panjyamon.webp", anim: "sprites/panjyamon2.webp" },
-  { idle: "sprites/gigadramon.webp", anim: "sprites/gigadramon2.webp" },
-  { idle: "sprites/metaletemon.webp", anim: "sprites/metaletemon2.webp" },
-  // continue na ordem dos slots...
+
+  {
+    id: "botamon",
+    idle: "sprites/botamon.webp",
+    anim: "sprites/botamon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: ["verde"],
+    evo: ["koromon"]
+  },
+
+  {
+    id: "poyomon",
+    idle: "sprites/poyomon.webp",
+    anim: "sprites/poyomon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: ["laranja"],
+    evo: ["tokomon"]
+  },
+
+  {
+    id: "punimon",
+    idle: "sprites/punimon.webp",
+    anim: "sprites/punimon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: ["azul"],
+    evo: ["tsunomon"]
+  },
+
+  {
+    id: "yuramon",
+    idle: "sprites/yuramon.webp",
+    anim: "sprites/yuramon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: ["rosa"],
+    evo: ["tanemon"]
+  },
+
+  {
+    id: "koromon",
+    idle: "sprites/koromon.webp",
+    anim: "sprites/koromon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: ["botamon"],
+    evo: ["agumon", "gabumon"]
+  },
+
+  {
+    id: "tokomon",
+    idle: "sprites/tokomon.webp",
+    anim: "sprites/tokomon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: ["poyomon"],
+    evo: ["patamon", "piyomon"]
+  },
+
+  {
+    id: "tsunomon",
+    idle: "sprites/tsunomon.webp",
+    anim: "sprites/tsunomon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: ["punimon"],
+    evo: ["elecmon", "penguinmon"]
+  },
+
+  {
+    id: "tanemon",
+    idle: "sprites/tanemon.webp",
+    anim: "sprites/tanemon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: ["yuramon"],
+    evo: ["palmon", "betamon"]
+  },
+
+  {
+    id: "agumon",
+    idle: "sprites/agumon.webp",
+    anim: "sprites/agumon2.webp",
+    hp: 100,
+    mp: 100,
+    off: 10,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 15,
+    pre: ["koromon"],
+    evo: ["greymon", "meramon", "birdramon", "centarumon", "monochromon", "tyrannomon"]
+  },
+
+  {
+    id: "gabumon",
+    idle: "sprites/gabumon.webp",
+    anim: "sprites/gabumon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 10,
+    spd: 10,
+    brn: 10,
+    desc: 0,
+    peso: 15,
+    pre: ["koromon"],
+    evo: ["centarumon", "monochromon", "drimogemon", "tyrannomon", "ogremon", "garurumon"]
+  },
+
+  {
+    id: "patamon",
+    idle: "sprites/patamon.webp",
+    anim: "sprites/patamon2.webp",
+    hp: 100,
+    mp: 0,
+    off: 10,
+    def: 0,
+    spd: 0,
+    brn: 10,
+    desc: 0,
+    peso: 15,
+    pre: ["tokomon"],
+    evo: ["drimogemon", "tyrannomon", "ogremon", "leomon", "angemon", "unimon"]
+  },
+
+  {
+    id: "elecmon",
+    idle: "sprites/elecmon.webp",
+    anim: "sprites/elecmon2.webp",
+    hp: 100,
+    mp: 0,
+    off: 10,
+    def: 0,
+    spd: 10,
+    brn: 0,
+    desc: 0,
+    peso: 15,
+    pre: ["tsunomon"],
+    evo: ["leomon", "angemon", "bakemon", "kokatorimon"]
+  },
+
+  {
+    id: "piyomon",
+    idle: "sprites/piyomon.webp",
+    anim: "sprites/piyomon2.webp",
+    hp: 0,
+    mp: 100,
+    off: 0,
+    def: 10,
+    spd: 10,
+    brn: 0,
+    desc: 0,
+    peso: 15,
+    pre: ["tokomon"],
+    evo: ["birdramon", "airdramon", "kokatorimon", "unimon", "kabuterimon"]
+  },
+
+  {
+    id: "kunemon",
+    idle: "sprites/kunemon.webp",
+    anim: "sprites/kunemon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: [""],
+    evo: ["bakemon", "kabuterimon", "kuwagamon", "vegiemon"]
+  },
+
+  {
+    id: "palmon",
+    idle: "sprites/palmon.webp",
+    anim: "sprites/palmon2.webp",
+    hp: 0,
+    mp: 100,
+    off: 0,
+    def: 0,
+    spd: 10,
+    brn: 10,
+    desc: 0,
+    peso: 15,
+    pre: ["tanemon"],
+    evo: ["kuwagamon", "vegiemon", "ninjamon", "whamon", "coelamon"]
+  },
+
+  {
+    id: "betamon",
+    idle: "sprites/betamon.webp",
+    anim: "sprites/betamon2.webp",
+    hp: 100,
+    mp: 100,
+    off: 0,
+    def: 10,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 15,
+    pre: ["tanemon"],
+    evo: ["seadramon", "whamon", "shellmon", "coelamon"]
+  },
+
+  {
+    id: "penguinmon",
+    idle: "sprites/penguinmon.webp",
+    anim: "sprites/penguinmon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: ["tsunomon"],
+    evo: ["whamon", "shellmon", "garurumon", "frigimon", "mojyamon"]
+  },
+
+  {
+    id: "greymon",
+    idle: "sprites/greymon.webp",
+    anim: "sprites/greymon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 100,
+    def: 100,
+    spd: 100,
+    brn: 100,
+    desc: 1,
+    peso: 30,
+    pre: ["agumon"],
+    evo: ["metalgreymon", "skullgreymon"]
+  },
+
+  {
+    id: "monochromon",
+    idle: "sprites/monochromon.webp",
+    anim: "sprites/monochromon2.webp",
+    hp: 1000,
+    mp: 0,
+    off: 0,
+    def: 100,
+    spd: 0,
+    brn: 100,
+    desc: 3,
+    peso: 40,
+    pre: ["agumon", "gabumon"],
+    evo: ["metalgreymon", "metalmamemon"]
+  },
+
+  {
+    id: "ogremon",
+    idle: "sprites/ogremon.webp",
+    anim: "sprites/ogremon2.webp",
+    hp: 1000,
+    mp: 0,
+    off: 100,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 5,
+    peso: 30,
+    pre: ["gabumon", "patamon"],
+    evo: ["andromon", "giromon"]
+  },
+
+  {
+    id: "airdramon",
+    idle: "sprites/airdramon.webp",
+    anim: "sprites/airdramon2.webp",
+    hp: 0,
+    mp: 1000,
+    off: 0,
+    def: 0,
+    spd: 100,
+    brn: 100,
+    desc: 1,
+    peso: 30,
+    pre: ["piyomon"],
+    evo: ["megadramon", "phoenixmon"]
+  },
+
+  {
+    id: "kuwagamon",
+    idle: "sprites/kuwagamon.webp",
+    anim: "sprites/kuwagamon2.webp",
+    hp: 1000,
+    mp: 1000,
+    off: 100,
+    def: 0,
+    spd: 100,
+    brn: 0,
+    desc: 5,
+    peso: 30,
+    pre: ["kunemon", "palmon"],
+    evo: ["hkabuterimon", "piximon"]
+  },
+
+  {
+    id: "whamon",
+    idle: "sprites/whamon.webp",
+    anim: "sprites/whamon2.webp",
+    hp: 1000,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 100,
+    desc: 5,
+    peso: 40,
+    pre: ["palmon", "betamon", "penguinmon"],
+    evo: ["megaseadramon", "mamemon"]
+  },
+
+  {
+    id: "frigimon",
+    idle: "sprites/frigimon.webp",
+    anim: "sprites/frigimon2.webp",
+    hp: 0,
+    mp: 1000,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 100,
+    desc: 5,
+    peso: 30,
+    pre: ["penguinmon"],
+    evo: ["metalmamemon", "mamemon"]
+  },
+
+  {
+    id: "nanimon",
+    idle: "sprites/nanimon.webp",
+    anim: "sprites/nanimon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: [""],
+    evo: ["digitamamon"]
+  },
+
+  {
+    id: "meramon",
+    idle: "sprites/meramon.webp",
+    anim: "sprites/meramon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 100,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 5,
+    peso: 20,
+    pre: ["agumon"],
+    evo: ["metalgreymon", "andromon"]
+  },
+
+  {
+    id: "drimogemon",
+    idle: "sprites/drimogemon.webp",
+    anim: "sprites/drimogemon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 100,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 3,
+    peso: 40,
+    pre: ["gabumon", "patamon"],
+    evo: ["metalgreymon"]
+  },
+
+  {
+    id: "leomon",
+    idle: "sprites/leomon.webp",
+    anim: "sprites/leomon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 100,
+    def: 0,
+    spd: 100,
+    brn: 100,
+    desc: 1,
+    peso: 20,
+    pre: ["patamon", "elecmon"],
+    evo: ["andromon", "mamemon"]
+  },
+
+  {
+    id: "kokatorimon",
+    idle: "sprites/kokatorimon.webp",
+    anim: "sprites/kokatorimon2.webp",
+    hp: 1000,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 3,
+    peso: 30,
+    pre: ["elecmon", "piyomon"],
+    evo: ["phoenixmon", "piximon"]
+  },
+
+  {
+    id: "vegiemon",
+    idle: "sprites/vegiemon.webp",
+    anim: "sprites/vegiemon2.webp",
+    hp: 0,
+    mp: 1000,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 5,
+    peso: 10,
+    pre: ["kunemon", "palmon"],
+    evo: ["piximon"]
+  },
+
+  {
+    id: "shellmon",
+    idle: "sprites/shellmon.webp",
+    anim: "sprites/shellmon2.webp",
+    hp: 1000,
+    mp: 0,
+    off: 0,
+    def: 100,
+    spd: 0,
+    brn: 0,
+    desc: 5,
+    peso: 40,
+    pre: ["betamon", "penguinmon"],
+    evo: ["hkabuterimon", "megaseadramon"]
+  },
+
+  {
+    id: "mojyamon",
+    idle: "sprites/mojyamon.webp",
+    anim: "sprites/mojyamon2.webp",
+    hp: 1000,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 5,
+    peso: 20,
+    pre: ["penguinmon"],
+    evo: ["skullgreymon", "mamemon"]
+  },
+
+  {
+    id: "birdramon",
+    idle: "sprites/birdramon.webp",
+    anim: "sprites/birdramon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 100,
+    brn: 0,
+    desc: 3,
+    peso: 20,
+    pre: ["agumon", "piyomon"],
+    evo: ["phoenixmon"]
+  },
+
+  {
+    id: "tyrannomon",
+    idle: "sprites/tyrannomon.webp",
+    anim: "sprites/tyrannomon2.webp",
+    hp: 1000,
+    mp: 0,
+    off: 0,
+    def: 100,
+    spd: 0,
+    brn: 0,
+    desc: 5,
+    peso: 30,
+    pre: ["agumon", "gabumon", "patamon"],
+    evo: ["metalgreymon", "megadramon"]
+  },
+
+  {
+    id: "angemon",
+    idle: "sprites/angemon.webp",
+    anim: "sprites/angemon2.webp",
+    hp: 0,
+    mp: 1000,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 100,
+    desc: 0,
+    peso: 20,
+    pre: ["patamon", "elecmon"],
+    evo: ["andromon", "phoenixmon"]
+  },
+
+  {
+    id: "unimon",
+    idle: "sprites/unimon.webp",
+    anim: "sprites/unimon2.webp",
+    hp: 1000,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 100,
+    brn: 0,
+    desc: 3,
+    peso: 30,
+    pre: ["patamon", "piyomon"],
+    evo: ["giromon", "phoenixmon"]
+  },
+
+  {
+    id: "ninjamon",
+    idle: "sprites/ninjamon.webp",
+    anim: "sprites/ninjamon2.webp",
+    hp: 0,
+    mp: 1000,
+    off: 100,
+    def: 0,
+    spd: 100,
+    brn: 0,
+    desc: 1,
+    peso: 10,
+    pre: ["palmon"],
+    evo: ["piximon", "metalmamemon", "mamemon"]
+  },
+
+  {
+    id: "coelamon",
+    idle: "sprites/coelamon.webp",
+    anim: "sprites/coelamon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 100,
+    spd: 0,
+    brn: 0,
+    desc: 3,
+    peso: 30,
+    pre: ["palmon", "betamon"],
+    evo: ["megaseadramon"]
+  },
+
+  {
+    id: "numemon",
+    idle: "sprites/numemon.webp",
+    anim: "sprites/numemon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: [""],
+    evo: ["monzaemon"]
+  },
+
+  {
+    id: "centarumon",
+    idle: "sprites/centarumon.webp",
+    anim: "sprites/centarumon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 100,
+    desc: 3,
+    peso: 30,
+    pre: ["agumon", "gabumon"],
+    evo: ["andromon", "giromon"]
+  },
+
+  {
+    id: "devimon",
+    idle: "sprites/devimon.webp",
+    anim: "sprites/devimon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: [""],
+    evo: ["skullgryemon", "megadramon"]
+  },
+
+  {
+    id: "bakemon",
+    idle: "sprites/bakemon.webp",
+    anim: "sprites/bakemon2.webp",
+    hp: 0,
+    mp: 1000,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 3,
+    peso: 20,
+    pre: ["elecmon", "kunemon"],
+    evo: ["skullgreymon", "giromon"]
+  },
+
+  {
+    id: "kabuterimon",
+    idle: "sprites/kabuterimon.webp",
+    anim: "sprites/kabuterimon2.webp",
+    hp: 1000,
+    mp: 1000,
+    off: 100,
+    def: 0,
+    spd: 100,
+    brn: 0,
+    desc: 1,
+    peso: 30,
+    pre: ["piyomon", "kunemon"],
+    evo: ["hkabuterimon", "metalmamemon"]
+  },
+
+  {
+    id: "seadramon",
+    idle: "sprites/seadramon.webp",
+    anim: "sprites/seadramon2.webp",
+    hp: 1000,
+    mp: 1000,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 3,
+    peso: 30,
+    pre: ["betamon"],
+    evo: ["megadramon", "megaseadramon"]
+  },
+
+  {
+    id: "garurumon",
+    idle: "sprites/garurumon.webp",
+    anim: "sprites/garurumon2.webp",
+    hp: 0,
+    mp: 1000,
+    off: 0,
+    def: 0,
+    spd: 100,
+    brn: 0,
+    desc: 1,
+    peso: 30,
+    pre: ["gabumon", "penguinmon"],
+    evo: ["skullgreymon", "megaseadramon"]
+  },
+
+  {
+    id: "sukamon",
+    idle: "sprites/sukamon.webp",
+    anim: "sprites/sukamon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: [""],
+    evo: ["etemon"]
+  },
+
+  {
+    id: "metalgreymon",
+    idle: "sprites/metalgreymon.webp",
+    anim: "sprites/metalgreymon2.webp",
+    hp: 4000,
+    mp: 3000,
+    off: 500,
+    def: 500,
+    spd: 300,
+    brn: 300,
+    desc: 10,
+    peso: 65,
+    pre: ["greymon", "meramon", "monochromon", "drimogemon", "tyrannomon"],
+    evo: [""]
+  },
+
+  {
+    id: "skullgreymon",
+    idle: "sprites/skullgreymon.webp",
+    anim: "sprites/skullgreymon2.webp",
+    hp: 4000,
+    mp: 6000,
+    off: 400,
+    def: 400,
+    spd: 200,
+    brn: 500,
+    desc: 10,
+    peso: 30,
+    pre: ["greymon", "devimon", "bakemon", "garurumon", "mojyamon"],
+    evo: [""]
+  },
+
+  {
+    id: "giromon",
+    idle: "sprites/giromon.webp",
+    anim: "sprites/giromon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 400,
+    def: 0,
+    spd: 300,
+    brn: 400,
+    desc: 15,
+    peso: 5,
+    pre: ["centarumon", "ogremon", "bakemon", "unimon"],
+    evo: [""]
+  },
+
+  {
+    id: "hkabuterimon",
+    idle: "sprites/hkabuterimon.webp",
+    anim: "sprites/hkabuterimon2.webp",
+    hp: 7000,
+    mp: 0,
+    off: 400,
+    def: 600,
+    spd: 400,
+    brn: 0,
+    desc: 5,
+    peso: 55,
+    pre: ["kabuterimon", "kuwagamon", "shellmon"],
+    evo: [""]
+  },
+
+  {
+    id: "metalmamemon",
+    idle: "sprites/metalmamemon.webp",
+    anim: "sprites/metalmamemon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 500,
+    def: 400,
+    spd: 400,
+    brn: 400,
+    desc: 15,
+    peso: 10,
+    pre: ["monochromon", "kabuterimon", "ninjamon", "frigimon"],
+    evo: [""]
+  },
+
+  {
+    id: "megaseadramon",
+    idle: "sprites/megaseadramon.webp",
+    anim: "sprites/megaseadramon2.webp",
+    hp: 0,
+    mp: 4000,
+    off: 500,
+    def: 400,
+    spd: 0,
+    brn: 400,
+    desc: 5,
+    peso: 30,
+    pre: ["seadramon", "whamon", "shellmon", "coelamon", "garurumon"],
+    evo: [""]
+  },
+
+  {
+    id: "vademon",
+    idle: "sprites/vademon.webp",
+    anim: "sprites/vademon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: [""],
+    evo: [""]
+  },
+
+  {
+    id: "etemon",
+    idle: "sprites/etemon.webp",
+    anim: "sprites/etemon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: ["sukamon"],
+    evo: [""]
+  },
+
+  {
+    id: "andromon",
+    idle: "sprites/andromon.webp",
+    anim: "sprites/andromon2.webp",
+    hp: 2000,
+    mp: 4000,
+    off: 200,
+    def: 400,
+    spd: 200,
+    brn: 400,
+    desc: 5,
+    peso: 40,
+    pre: ["meramon", "centarumon", "ogremon", "leomon", "angemon"],
+    evo: [""]
+  },
+
+  {
+    id: "megadramon",
+    idle: "sprites/megadramon.webp",
+    anim: "sprites/megadramon2.webp",
+    hp: 3000,
+    mp: 5000,
+    off: 500,
+    def: 300,
+    spd: 400,
+    brn: 400,
+    desc: 10,
+    peso: 55,
+    pre: ["tyrannomon", "devimon", "airdramon", "seadramon"],
+    evo: [""]
+  },
+
+  {
+    id: "phoenixmon",
+    idle: "sprites/phoenixmon.webp",
+    anim: "sprites/phoenixmon2.webp",
+    hp: 4000,
+    mp: 4000,
+    off: 0,
+    def: 0,
+    spd: 400,
+    brn: 600,
+    desc: 3,
+    peso: 30,
+    pre: ["birdramon", "angemon", "airdramon", "kokatorimon", "unimon"],
+    evo: [""]
+  },
+
+  {
+    id: "piximon",
+    idle: "sprites/piximon.webp",
+    anim: "sprites/piximon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 300,
+    def: 300,
+    spd: 400,
+    brn: 400,
+    desc: 15,
+    peso: 5,
+    pre: ["kokatorimon", "kuwagamon", "vegiemon", "ninjamon"],
+    evo: [""]
+  },
+
+  {
+    id: "mamemon",
+    idle: "sprites/mamemon.webp",
+    anim: "sprites/mamemon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 400,
+    def: 300,
+    spd: 400,
+    brn: 400,
+    desc: 15,
+    peso: 5,
+    pre: ["leomon", "ninjamon", "whamon", "frigimon", "mojyamon"],
+    evo: [""]
+  },
+
+  {
+    id: "monzaemon",
+    idle: "sprites/monzaemon.webp",
+    anim: "sprites/monzaemon2.webp",
+    hp: 3000,
+    mp: 3000,
+    off: 300,
+    def: 300,
+    spd: 300,
+    brn: 300,
+    desc: 0,
+    peso: 40,
+    pre: ["numemon"],
+    evo: [""]
+  },
+
+  {
+    id: "digitamamon",
+    idle: "sprites/digitamamon.webp",
+    anim: "sprites/digitamamon2.webp",
+    hp: 3000,
+    mp: 3000,
+    off: 400,
+    def: 400,
+    spd: 400,
+    brn: 300,
+    desc: 0,
+    peso: 10,
+    pre: ["nanimon"],
+    evo: [""]
+  },
+
+  {
+    id: "panjyamon",
+    idle: "sprites/panjyamon.webp",
+    anim: "sprites/panjyamon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: [""],
+    evo: [""]
+  },
+
+  {
+    id: "gigadramon",
+    idle: "sprites/gigadramon.webp",
+    anim: "sprites/gigadramon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: [""],
+    evo: [""]
+  },
+
+  {
+    id: "metaletemon",
+    idle: "sprites/metaletemon.webp",
+    anim: "sprites/metaletemon2.webp",
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: [""],
+    evo: [""]
+  },
+
+
+  {
+    id: "verde",
+    idle: "sprites/verde.webp",
+    anim: null,
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: [""],
+    evo: ["botamon"]
+  },
+
+  {
+    id: "azul",
+    idle: "sprites/azul.webp",
+    anim: null,
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: [""],
+    evo: ["punimon"]
+  },
+
+  {
+    id: "laranja",
+    idle: "sprites/laranja.webp",
+    anim: null,
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: [""],
+    evo: ["poyomon"]
+  },
+
+  {
+    id: "rosa",
+    idle: "sprites/rosa.webp",
+    anim: null,
+    hp: 0,
+    mp: 0,
+    off: 0,
+    def: 0,
+    spd: 0,
+    brn: 0,
+    desc: 0,
+    peso: 0,
+    pre: [""],
+    evo: ["yuramon"]
+  },
+
 ];
 
 /* =========================
@@ -147,7 +1172,6 @@ class DigimonChart {
     this.CHART_BASE_WIDTH = 1458;
     this.SLOT_BASE_SIZE = 94;
     this.CURSOR_BASE_SIZE = 94;
-    this.TOL = 0.06;
 
     this.currentIndex = 0;
     this.cursorAtivo = false;
@@ -164,9 +1188,9 @@ class DigimonChart {
     this.closeSound = new Audio("sounds/close.ogg");
     this.closeSound.volume = 0.5; // ajuste se quiser
     this.soundEnabled = localStorage.getItem("soundEnabled") !== "false";
-this.inContent2 = false;
+    this.inContent2 = false;
 
-this.closeButton = document.getElementById("close-button");
+    this.closeButton = document.getElementById("close-button");
 
     this.chart = document.querySelector(".chart");
     this.container = document.getElementById("slots-container");
@@ -174,19 +1198,6 @@ this.closeButton = document.getElementById("close-button");
 
     this.slotImages = [];
     this.slots = [];
-    this.nav = [];
-    this.columns = [
-      [0, 1, 2, 3],          // 1–4
-      [4, 5, 6, 7],          // 5–8
-      [8, 9, 10, 11, 12, 13, 14, 15, 16], // 9–17
-      [17, 18, 19, 20, 21, 22, 23, 24],  // 18–25
-      [25, 26, 27, 28, 29, 30, 31],     // 26–32
-      [32, 33, 34, 35, 36, 37, 38],     // 33–39
-      [39, 40, 41, 42, 43, 44, 45],     // 40–46
-      [46, 47, 48, 49, 50, 51, 52, 53],  // 47–54
-      [54, 55, 56, 57, 58, 59, 60],     // 55–61
-      [61, 62, 63]                  // 62–64
-    ];
     this.nav = {
       0: { w: 63, a: 54, s: 1, d: 4 },
       1: { w: 0, a: 56, s: 2, d: 5 },
@@ -281,9 +1292,9 @@ this.closeButton = document.getElementById("close-button");
     this.updateLayout();
     this.updateCursor();
     this.updateAnimation();
-    this.closeButton.addEventListener("click",()=>{
-this.closeContent();
-});
+    this.closeButton.addEventListener("click", () => {
+      this.closeContent();
+    });
   }
 
   setupSoundButton() {
@@ -346,18 +1357,30 @@ this.closeContent();
     });
   }
 
+  updateCenterDigimon() {
+    const digimon = digimonSprites[this.currentIndex];
 
+    this.createRightEvoSlots();
+    const img = document.getElementById("center-digimon");
+
+    const sprite = digimonSprites[this.currentIndex];
+
+    if (!sprite) return;
+
+    img.src = sprite.idle;
+
+  }
 
   updateLayout() {
     const rect = this.chart.getBoundingClientRect();
     const scale = rect.width / this.CHART_BASE_WIDTH;
     const closeSize = Math.round(40 * scale);
 
-this.closeButton.style.width = closeSize + "px";
-this.closeButton.style.height = closeSize + "px";
+    this.closeButton.style.width = closeSize + "px";
+    this.closeButton.style.height = closeSize + "px";
 
-this.closeButton.style.right = Math.round(30 * scale) + "px";
-this.closeButton.style.top = Math.round(30 * scale) + "px";
+    this.closeButton.style.right = Math.round(30 * scale) + "px";
+    this.closeButton.style.top = Math.round(30 * scale) + "px";
     const size = Math.round(this.SLOT_BASE_SIZE * scale);
 
     this.slots.forEach((div, index) => {
@@ -399,15 +1422,15 @@ this.closeButton.style.top = Math.round(30 * scale) + "px";
 
     this.cursor.style.top =
       offsetY + Math.round(slot.y * chartRect.height) + "px";
+
+    this.updateCenterDigimon();
   }
+
 
   updateAnimation() {
     this.slotImages.forEach(img => {
-      if (img.src !== img.dataset.idle) {
-        img.src = img.dataset.idle;
-      }
+      img.src = img.dataset.idle;
     });
-
     if (this.animInterval) clearInterval(this.animInterval);
 
     const img = this.slotImages[this.currentIndex];
@@ -422,158 +1445,171 @@ this.closeButton.style.top = Math.round(30 * scale) + "px";
     }, 400);
   }
 
-select(){
-  this.playExpandAnimation();
-}
+  select() {
+    this.playExpandAnimation();
+  }
 
-playExpandAnimation(){
+  playExpandAnimation() {
 
-if(this.inTransition) return;
+    if (this.inTransition) return;
 
-this.inTransition = true;
+    this.inTransition = true;
 
-const slot = this.slots[this.currentIndex];
-const rect = slot.getBoundingClientRect();
-const chartRect = this.chart.getBoundingClientRect();
-const panelRect = this.chart.parentElement.getBoundingClientRect();
+    const slot = this.slots[this.currentIndex];
+    const rect = slot.getBoundingClientRect();
+    const chartRect = this.chart.getBoundingClientRect();
+    const panelRect = this.chart.parentElement.getBoundingClientRect();
 
-const expand = this.expandRect;
+    const expand = this.expandRect;
 
-const startX = rect.left + rect.width/2 - panelRect.left;
-const startY = rect.top + rect.height/2 - panelRect.top;
+    const startX = rect.left + rect.width / 2 - panelRect.left;
+    const startY = rect.top + rect.height / 2 - panelRect.top;
 
-const endX = chartRect.left - panelRect.left;
-const endY = chartRect.top - panelRect.top;
+    const endX = chartRect.left - panelRect.left;
+    const endY = chartRect.top - panelRect.top;
 
-expand.style.transition = "none";
+    expand.style.transition = "none";
 
-expand.style.left = startX + "px";
-expand.style.top = startY + "px";
-expand.style.width = "0px";
-expand.style.height = "0px";
-expand.style.opacity = "1";
+    expand.style.left = startX + "px";
+    expand.style.top = startY + "px";
+    expand.style.width = "0px";
+    expand.style.height = "0px";
+    expand.style.opacity = "1";
 
-/* força render */
-expand.offsetHeight;
+    /* força render */
+    expand.offsetHeight;
 
-expand.style.transition =
-"left 0.2s ease, top 0.2s ease, width 0.2s ease, height 0.2s ease";
+    expand.style.transition =
+      "left 0.2s ease, top 0.2s ease, width 0.2s ease, height 0.2s ease";
 
-expand.style.left = endX + "px";
-expand.style.top = endY + "px";
-expand.style.width = chartRect.width + "px";
-expand.style.height = chartRect.height + "px";
+    expand.style.left = endX + "px";
+    expand.style.top = endY + "px";
+    expand.style.width = chartRect.width + "px";
+    expand.style.height = chartRect.height + "px";
 
-setTimeout(()=>{
+    setTimeout(() => {
 
-this.expandRect.style.opacity = "0";   // faz o retângulo sumir
-this.openContent2();
+      this.expandRect.style.opacity = "0";   // faz o retângulo sumir
+      this.openContent2();
 
-},200);
+    }, 200);
 
-}
+  }
 
-playCollapseAnimation(){
+  playCollapseAnimation() {
 
-if(this.inTransition) return;
+    if (this.inTransition) return;
 
-this.inTransition = true;
+    this.inTransition = true;
 
-const slot = this.slots[this.currentIndex];
-const rect = slot.getBoundingClientRect();
-const chartRect = this.chart.getBoundingClientRect();
-const panelRect = this.chart.parentElement.getBoundingClientRect();
+    const slot = this.slots[this.currentIndex];
+    const rect = slot.getBoundingClientRect();
+    const chartRect = this.chart.getBoundingClientRect();
+    const panelRect = this.chart.parentElement.getBoundingClientRect();
 
-const expand = this.expandRect;
+    const expand = this.expandRect;
 
-const endX = rect.left + rect.width/2 - panelRect.left;
-const endY = rect.top + rect.height/2 - panelRect.top;
+    const endX = rect.left + rect.width / 2 - panelRect.left;
+    const endY = rect.top + rect.height / 2 - panelRect.top;
 
-expand.style.transition = "none";
+    expand.style.transition = "none";
 
-expand.style.left = chartRect.left - panelRect.left + "px";
-expand.style.top = chartRect.top - panelRect.top + "px";
-expand.style.width = chartRect.width + "px";
-expand.style.height = chartRect.height + "px";
-expand.style.opacity = "1";
+    expand.style.left = chartRect.left - panelRect.left + "px";
+    expand.style.top = chartRect.top - panelRect.top + "px";
+    expand.style.width = chartRect.width + "px";
+    expand.style.height = chartRect.height + "px";
+    expand.style.opacity = "1";
 
-/* força render */
-expand.offsetHeight;
+    /* força render */
+    expand.offsetHeight;
 
-expand.style.transition =
-"left 0.2s ease, top 0.2s ease, width 0.2s ease, height 0.2s ease";
+    expand.style.transition =
+      "left 0.2s ease, top 0.2s ease, width 0.2s ease, height 0.2s ease";
 
-expand.style.left = endX + "px";
-expand.style.top = endY + "px";
-expand.style.width = "0px";
-expand.style.height = "0px";
+    expand.style.left = endX + "px";
+    expand.style.top = endY + "px";
+    expand.style.width = "0px";
+    expand.style.height = "0px";
 
-setTimeout(()=>{
+    setTimeout(() => {
 
-this.expandRect.style.opacity = 0;
-this.returnToChart();
-this.inTransition = false;
+      this.expandRect.style.opacity = 0;
+      this.returnToChart();
+      this.inTransition = false;
 
-},200);
+    }, 200);
 
-}
+  }
 
-openContent2(){
+  openContent2() {
 
-const slots = document.getElementById("slots-container");
-const cursor = document.getElementById("cursor");
+    const slots = document.getElementById("slots-container");
+    document.getElementById("evo-ui").style.display = "flex";
+    const cursor = document.getElementById("cursor");
 
-slots.style.display = "none";
-cursor.style.display = "none";
+    slots.style.display = "none";
+    cursor.style.display = "none";
 
-this.chart.src = "images/conteudo2.png";
+    this.chart.src = "images/conteudo2.png";
 
-this.inContent2 = true;
-this.inTransition = false;
-this.active = false;
-this.closeButton.style.opacity = "1";
-this.closeButton.style.pointerEvents = "auto";
-}
+    document.getElementById("evo-ui").style.display = "flex";
 
-closeContent(){
+    this.inContent2 = true;
+    this.inTransition = false;
+    this.active = false;
+    this.closeButton.style.opacity = "1";
+    this.closeButton.style.pointerEvents = "auto";
+    this.createRightEvoSlots();
+    this.createLeftEvoSlots();
+    setTimeout(() => this.drawEvoLines(this.currentLayout), 50);
+    setTimeout(() => this.drawPreLines(this.currentPreLayout), 50);
+  }
 
-if(!this.inContent2 || this.inTransition) return;
+  closeContent() {
 
-this.chart.src = "images/chart.png";
+    if (!this.inContent2 || this.inTransition) return;
+    document.getElementById("evo-ui").style.display = "none";
+    this.chart.src = "images/chart.png";
 
-const slots = document.getElementById("slots-container");
-const cursor = document.getElementById("cursor");
+    const slots = document.getElementById("slots-container");
+    const cursor = document.getElementById("cursor");
 
-slots.style.display = "block";
-cursor.style.display = "block";
+    slots.style.display = "block";
+    cursor.style.display = "block";
 
-this.closeButton.style.opacity = "0";
-this.closeButton.style.pointerEvents = "none";
-this.playCloseSound();
-this.playCollapseAnimation();
+    this.closeButton.style.opacity = "0";
+    this.closeButton.style.pointerEvents = "none";
+    this.playCloseSound();
+    this.clearEvoLines();
+    this.clearPreLines();
+    this.playCollapseAnimation();
 
-}
+  }
 
-returnToChart(){
+  returnToChart() {
 
-const slots = document.getElementById("slots-container");
-const cursor = document.getElementById("cursor");
+    this.clearEvoLines();
+    this.clearPreLines();
+    document.getElementById("evo-ui").style.display = "none";
+    const slots = document.getElementById("slots-container");
+    const cursor = document.getElementById("cursor");
 
-this.chart.src = "images/chart.png";
+    this.chart.src = "images/chart.png";
 
-slots.style.display = "block";
-cursor.style.display = "block";
+    slots.style.display = "block";
+    cursor.style.display = "block";
 
-this.expandRect.style.opacity = 0;
+    this.expandRect.style.opacity = 0;
 
-this.inContent2 = false;
-this.active = true;
-this.closeButton.style.opacity = "0";
-this.closeButton.style.pointerEvents = "none";
+    this.inContent2 = false;
+    this.active = true;
+    this.closeButton.style.opacity = "0";
+    this.closeButton.style.pointerEvents = "none";
 
-this.updateCursor();
+    this.updateCursor();
 
-}
+
+  }
 
   onResize() {
 
@@ -586,15 +1622,16 @@ this.updateCursor();
     requestAnimationFrame(() => {
       this.updateLayout();
       this.updateCursor();
+
     });
   }
 
   onKey(e) {
 
-if(e.key === "Escape" && this.inContent2){
-this.closeContent();
-return;
-}
+    if (e.key === "Escape" && this.inContent2) {
+      this.closeContent();
+      return;
+    }
     if (!this.active) return;
     let direction = null;
 
@@ -653,17 +1690,345 @@ return;
     sound.play();
   }
 
-playCloseSound() {
+  playCloseSound() {
 
-  if (!this.soundEnabled) return;
+    if (!this.soundEnabled) return;
 
-  const sound = this.closeSound.cloneNode();
-  sound.volume = this.closeSound.volume;
-  sound.play();
+    const sound = this.closeSound.cloneNode();
+    sound.volume = this.closeSound.volume;
+    sound.play();
 
+  }
+
+  drawEvoLines(layouts) {
+    const old = document.getElementById("evo-lines");
+    if (old) old.remove();
+
+    const center = document.querySelector(".center-slot");
+    const targets = document.querySelectorAll("#evo-slots-right .evo-slot");
+
+    if (!center || targets.length === 0) return;
+
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.id = "evo-lines";
+    svg.style.cssText = `
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: visible;
+  `;
+    document.getElementById("evo-ui").insertBefore(svg, document.getElementById("evo-ui").firstChild);
+
+    const parentRect = document.getElementById("evo-ui").getBoundingClientRect();
+    const cRect = center.getBoundingClientRect();
+    const scale = parentRect.width / 936;
+
+    const lineSpacing = 8 * scale;
+
+    targets.forEach((target, i) => {
+      const inner = target.querySelector(".evo-slot-inner");
+      const iRect = inner ? inner.getBoundingClientRect() : target.getBoundingClientRect();
+      if (iRect.width === 0) return;
+
+      const color = layouts && layouts.colors[i] ? layouts.colors[i] : "#ffffff";
+      const outlineColor = layouts && layouts.outlines && layouts.outlines[i] ? layouts.outlines[i] : color;
+      const cfg = layouts && layouts.lines && layouts.lines[i] ? layouts.lines[i] : { h: 0, d: 0 };
+
+      const startX = cRect.right - parentRect.left;
+      const startY = (cRect.top + cRect.height / 2 - (targets.length / 2 * lineSpacing) + i * lineSpacing) - parentRect.top;
+
+      const endX = iRect.left - parentRect.left;
+      const endY = iRect.top + iRect.height / 2 - parentRect.top;
+
+      const midX = startX + cfg.h * scale;
+      const diagX = midX + cfg.d * scale;
+
+      const points = `${startX},${startY} ${midX},${startY} ${diagX},${endY} ${endX},${endY}`;
+
+      const outline = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+      outline.setAttribute("points", points);
+      outline.setAttribute("stroke", outlineColor);
+      outline.setAttribute("stroke-width", 8 * scale);
+      outline.setAttribute("fill", "none");
+      outline.setAttribute("stroke-linecap", "round");
+      outline.setAttribute("stroke-linejoin", "miter");
+      svg.appendChild(outline);
+
+      const line = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+      line.setAttribute("points", points);
+      line.setAttribute("stroke", color);
+      line.setAttribute("stroke-width", 4 * scale);
+      line.setAttribute("fill", "none");
+      line.setAttribute("stroke-linecap", "round");
+      line.setAttribute("stroke-linejoin", "miter")
+      svg.appendChild(line);
+    });
+  }
+
+  clearEvoLines() {
+    const svg = document.getElementById("evo-lines");
+    if (svg) svg.remove();
+  }
+
+  createRightEvoSlots() {
+
+    const evoLayouts = {
+      1: {
+        offsetX: 5,
+        colors: ["#00AEB8"],
+        outlines: ["#006F8E"],
+        lines: [{ h: 300, offsetX: 7 }]
+      },
+      2: {
+        gap: 15, offsetX: 5,
+        colors: ["#00AEB8", "#003CC8"],
+        outlines: ["#006F8E", "#001E8C"],
+        lines: [{ h: 170, d: 30, offsetX: 7 },
+        { h: 170, d: 30, offsetX: 7 }]
+      },
+      3: {
+        gap: 15, offsetX: 5,
+        colors: ["#00B600", "#00AEB8", "#003CC8"],
+        outlines: ["#006400", "#006F8E", "#001E8C"],
+        lines: [{ h: 70, d: 100, offsetX: 31 },
+        { h: 300, offsetX: 7 },
+        { h: 70, d: 100, offsetX: 31 }]
+      },
+      4: {
+        gap: 15, offsetX: 5,
+        colors: ["#00B600", "#00AEB8", "#003CC8", "#BE00A0"],
+        outlines: ["#006400", "#006F8E", "#001E8C", "#6E006E"],
+        lines: [{ h: 70, d: 100, offsetX: 31 },
+        { h: 170, d: 30, offsetX: 7 },
+        { h: 170, d: 30, offsetX: 7 },
+        { h: 70, d: 100, offsetX: 31 }]
+      },
+      5: {
+        gap: 15, offsetX: 5,
+        colors: ["#FBE802", "#00B600", "#00AEB8", "#003CC8", "#BE00A0"],
+        outlines: ["#EC9A00", "#006400", "#006F8E", "#001E8C", "#6E006E"],
+        lines: [{ h: 0, d: 160, offsetX: 55 },
+        { h: 70, d: 100, offsetX: 31 },
+        { h: 300, offsetX: 7 },
+        { h: 70, d: 100, offsetX: 31 },
+        { h: 0, d: 160, offsetX: 55 }]
+      },
+      6: {
+        gap: 15, offsetX: 5,
+        colors: ["#FBE802", "#00B600", "#00AEB8", "#003CC8", "#BE00A0", "#BE001E"],
+        outlines: ["#EC9A00", "#006400", "#006F8E", "#001E8C", "#6E006E", "#821E1E"],
+        lines: [{ h: 0, d: 160, offsetX: 55 },
+        { h: 70, d: 100, offsetX: 31 },
+        { h: 170, d: 30, offsetX: 7 },
+        { h: 170, d: 30, offsetX: 7 },
+        { h: 70, d: 100, offsetX: 31 },
+        { h: 0, d: 160, offsetX: 55 }]
+      }
+    };
+
+    const container = document.getElementById("evo-slots-right");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    const digimon = digimonSprites[this.currentIndex];
+    if (!digimon || !digimon.evo) return;
+
+    const total = digimon.evo.filter(id => digimonSprites.find(d => d.id === id)).length;
+    const layout = evoLayouts[total];
+    this.currentLayout = layout;
+    let count = 0;
+
+    if (layout) {
+      container.style.gap = `${layout.gap / 936 * 100}vw`;
+    }
+
+    digimon.evo.forEach((evoID) => {
+      const evo = digimonSprites.find(d => d.id === evoID);
+      if (!evo) return;
+
+      const slot = document.createElement("div");
+      slot.className = "evo-slot";
+
+      const inner = document.createElement("div");
+      inner.className = "evo-slot-inner";
+
+      const img = document.createElement("img");
+      img.src = evo.idle;
+      img.style.cssText = "width:80%; height:auto; image-rendering:pixelated; pointer-events:none;";
+
+      if (layout && layout.lines[count]) {
+        const individualOffset = layout.lines[count].offsetX || 0;
+        const globalOffset = layout.offsetX || 0;
+        slot.style.marginRight = `${individualOffset + globalOffset}%`;
+      }
+
+      inner.appendChild(img);
+      slot.appendChild(inner);
+      container.appendChild(slot);
+
+      count++;
+    });
+
+    setTimeout(() => this.drawEvoLines(layout), 50);
+  }
+
+drawPreLines(layout) {
+  const old = document.getElementById("pre-lines");
+  if (old) old.remove();
+
+  const center = document.querySelector(".center-slot");
+  const targets = document.querySelectorAll("#evo-slots-left .evo-slot");
+
+  if (!center || targets.length === 0) return;
+
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.id = "pre-lines";
+  svg.style.cssText = `
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: visible;
+  `;
+  document.getElementById("evo-ui").insertBefore(svg, document.getElementById("evo-ui").firstChild);
+
+  const parentRect = document.getElementById("evo-ui").getBoundingClientRect();
+  const cRect = center.getBoundingClientRect();
+  const scale = parentRect.width / 936;
+  const lineSpacing = 8 * scale;
+
+  targets.forEach((target, i) => {
+    const inner = target.querySelector(".evo-slot-inner");
+    const iRect = inner ? inner.getBoundingClientRect() : target.getBoundingClientRect();
+    if (iRect.width === 0) return;
+
+    const cfg = layout && layout.lines && layout.lines[i] ? layout.lines[i] : { h: 60, d: 0 };
+
+    const startX = cRect.left - parentRect.left;
+    const startY = (cRect.top + cRect.height / 2 - (targets.length / 2 * lineSpacing) + i * lineSpacing) - parentRect.top;
+    const endX = iRect.right - parentRect.left;
+    const endY = iRect.top + iRect.height / 2 - parentRect.top;
+
+    const midX = startX - cfg.h * scale;
+    const diagX = midX - cfg.d * scale;
+
+    const points = `${startX},${startY} ${midX},${startY} ${diagX},${endY} ${endX},${endY}`;
+
+    const outline = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+    outline.setAttribute("points", points);
+    outline.setAttribute("stroke", "#DB6500");
+    outline.setAttribute("stroke-width", 8 * scale);
+    outline.setAttribute("fill", "none");
+    outline.setAttribute("stroke-linecap", "round");
+    outline.setAttribute("stroke-linejoin", "miter");
+    svg.appendChild(outline);
+
+    const line = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+    line.setAttribute("points", points);
+    line.setAttribute("stroke", "#E39407");
+    line.setAttribute("stroke-width", 4 * scale);
+    line.setAttribute("fill", "none");
+    line.setAttribute("stroke-linecap", "round");
+    line.setAttribute("stroke-linejoin", "miter");
+    svg.appendChild(line);
+  });
 }
-}
 
+  clearPreLines() {
+    const svg = document.getElementById("pre-lines");
+    if (svg) svg.remove();
+  }
+
+  createLeftEvoSlots() {
+const preLayouts = {
+  1: {
+    gap: 0, offsetX: 5,
+    lines: [{ h: 300, offsetX: 7 }]
+  },
+  2: {
+    gap: 15, offsetX: 5,
+    lines: [{ h: 170, d: 30, offsetX: 7 },
+            { h: 170, d: 30, offsetX: 7 }]
+  },
+  3: {
+    gap: 15, offsetX: 5,
+    lines: [{ h: 70, d: 100, offsetX: 31 },
+            { h: 300, offsetX: 7 },
+            { h: 70, d: 100, offsetX: 31 }]
+  },
+  4: {
+    gap: 15, offsetX: 5,
+    lines: [{ h: 70, d: 100, offsetX: 31 },
+            { h: 170, d: 30, offsetX: 7 },
+            { h: 170, d: 30, offsetX: 7 },
+            { h: 70, d: 100, offsetX: 31 }]
+  },
+  5: {
+    gap: 15, offsetX: 5,
+    lines: [{ h: 0, d: 160, offsetX: 55 },
+            { h: 70, d: 100, offsetX: 31 },
+            { h: 300, offsetX: 7 },
+            { h: 70, d: 100, offsetX: 31 },
+            { h: 0, d: 160, offsetX: 55 }]
+  }
+};
+
+    const container = document.getElementById("evo-slots-left");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    const digimon = digimonSprites[this.currentIndex];
+    if (!digimon || !digimon.pre) return;
+
+    const total = digimon.pre.filter(id => digimonSprites.find(d => d.id === id)).length;
+    if (total === 0) return;
+
+    const layout = preLayouts[total];
+    this.currentPreLayout = layout;
+
+    if (layout) {
+      container.style.gap = `${layout.gap / 936 * 100}vw`;
+    }
+
+    let count = 0;
+
+    digimon.pre.forEach((preID) => {
+      const pre = digimonSprites.find(d => d.id === preID);
+      if (!pre) return;
+
+      const slot = document.createElement("div");
+      slot.className = "evo-slot";
+
+      const inner = document.createElement("div");
+      inner.className = "evo-slot-inner";
+
+      const img = document.createElement("img");
+      img.src = pre.idle;
+      img.style.cssText = "width:80%; height:auto; image-rendering:pixelated; pointer-events:none;";
+
+      if (layout && layout.lines[count]) {
+        const individualOffset = layout.lines[count].offsetX || 0;
+        const globalOffset = layout.offsetX || 0;
+        slot.style.marginLeft = `${individualOffset + globalOffset}%`;
+      }
+
+      inner.appendChild(img);
+      slot.appendChild(inner);
+      container.appendChild(slot);
+
+      count++;
+    });
+
+    setTimeout(() => this.drawPreLines(layout), 50);
+  }
+}
 window.chartSystem = new DigimonChart();
 
 /* =========================
@@ -678,18 +2043,17 @@ function setupMenuSystem() {
   const chart = document.querySelector(".chart");
   const slots = document.getElementById("slots-container");
   const cursor = document.getElementById("cursor");
-  const soundBtn = document.getElementById("soundToggle");
 
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
 
-      if(window.chartSystem){
-window.chartSystem.returnToChart();
-}
+      if (window.chartSystem) {
+        window.chartSystem.returnToChart();
+      }
 
       // 🔊 som de menu
       if (window.chartSystem && window.chartSystem.soundEnabled) {
-        const menuSound = new Audio("sounds/click.ogg");
+        const menuSound = new Audio("sounds/blop2.ogg");
         menuSound.volume = 0.5;
         menuSound.play();
       }
@@ -724,11 +2088,11 @@ window.chartSystem.returnToChart();
         chart.src = "images/conteudo.png";
         detoContent.style.display = "block";
 
-        if(window.chartSystem){
-window.chartSystem.expandRect.style.opacity = 0;
-window.chartSystem.inContent2 = false;
-window.chartSystem.inTransition = false;
-}
+        if (window.chartSystem) {
+          window.chartSystem.expandRect.style.opacity = 0;
+          window.chartSystem.inContent2 = false;
+          window.chartSystem.inTransition = false;
+        }
       }
 
     });
