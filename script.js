@@ -1316,7 +1316,8 @@ class DigimonChart {
 
     updateIcon();
 
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
       this.soundEnabled = !this.soundEnabled;
       localStorage.setItem("soundEnabled", this.soundEnabled);
       updateIcon();
@@ -1577,211 +1578,211 @@ class DigimonChart {
     this.createLeftEvoSlots();
     setTimeout(() => this.drawEvoLines(this.currentLayout), 50);
     setTimeout(() => this.drawPreLines(this.currentPreLayout), 50);
-setTimeout(() => {
-  this.evoSide = "right";
-  this.evoIndex = 0;
-  this.inEvoSelect = true;
-  const rightSlots = document.querySelectorAll("#evo-slots-right .evo-slot-inner");
-  const leftSlots = document.querySelectorAll("#evo-slots-left .evo-slot-inner");
-  if (rightSlots.length) {
-    this.evoSide = "right";
-    this.updateEvoCursor();
-    this._startEvoAnim("right");
-  } else if (leftSlots.length) {
-    this.evoSide = "left";
-    this.updateEvoCursor();
-    this._startEvoAnim("left");
-  }
-}, 60);
+    setTimeout(() => {
+      this.evoSide = "right";
+      this.evoIndex = 0;
+      this.inEvoSelect = true;
+      const rightSlots = document.querySelectorAll("#evo-slots-right .evo-slot-inner");
+      const leftSlots = document.querySelectorAll("#evo-slots-left .evo-slot-inner");
+      if (rightSlots.length) {
+        this.evoSide = "right";
+        this.updateEvoCursor();
+        this._startEvoAnim("right");
+      } else if (leftSlots.length) {
+        this.evoSide = "left";
+        this.updateEvoCursor();
+        this._startEvoAnim("left");
+      }
+    }, 60);
     setTimeout(() => this.scaleStatusBar(), 60);
   }
 
-scaleStatusBar() {
-  const bar = document.getElementById("status-bar");
-  const ui = document.getElementById("evo-ui");
-  const main = document.querySelector(".left-panel");
-  if (!bar || !ui || !main) return;
+  scaleStatusBar() {
+    const bar = document.getElementById("status-bar");
+    const ui = document.getElementById("evo-ui");
+    const main = document.querySelector(".left-panel");
+    if (!bar || !ui || !main) return;
 
-  bar.style.transform = "translateX(-50%) scale(1)";
-  bar.style.transformOrigin = "top center";
+    bar.style.transform = "translateX(-50%) scale(1)";
+    bar.style.transformOrigin = "top center";
 
-  const uiRect = ui.getBoundingClientRect();
-  const mainRect = main.getBoundingClientRect();
-  const barRect = bar.getBoundingClientRect();
+    const uiRect = ui.getBoundingClientRect();
+    const mainRect = main.getBoundingClientRect();
+    const barRect = bar.getBoundingClientRect();
 
-  const barTop = barRect.top - uiRect.top;
-  const availableH = uiRect.height - barTop - (uiRect.height * 0.02);
-  const availableW = mainRect.width * 0.44;
+    const barTop = barRect.top - uiRect.top;
+    const availableH = uiRect.height - barTop - (uiRect.height * 0.02);
+    const availableW = mainRect.width * 0.44;
 
-  const scaleH = availableH / barRect.height;
-  const scaleW = availableW / barRect.width;
-  const scale = Math.min(scaleH, scaleW, 1);
+    const scaleH = availableH / barRect.height;
+    const scaleW = availableW / barRect.width;
+    const scale = Math.min(scaleH, scaleW, 1);
 
-  bar.style.transform = `translateX(-50%) scale(${scale})`;
-}
-
-_getSlotDigimon(side, index) {
-  const digimon = digimonSprites.find(d => d.id === this.evoCenterID);
-  if (!digimon) return null;
-  const ids = side === "right" ? digimon.evo : digimon.pre;
-  if (!ids) return null;
-  const validIDs = ids.filter(id => digimonSprites.find(d => d.id === id));
-  return digimonSprites.find(d => d.id === validIDs[index]) || null;
-}
-
-_stopEvoAnim() {
-  if (this.evoAnimInterval) {
-    clearInterval(this.evoAnimInterval);
-    this.evoAnimInterval = null;
+    bar.style.transform = `translateX(-50%) scale(${scale})`;
   }
-}
 
-_startEvoAnim(side) {
-  this._stopEvoAnim();
-  const selector = side === "right"
-    ? "#evo-slots-right .evo-slot-inner"
-    : "#evo-slots-left .evo-slot-inner";
-  const slots = document.querySelectorAll(selector);
-  const curImg = slots[this.evoIndex]?.querySelector("img");
-  const curDigimon = this._getSlotDigimon(side, this.evoIndex);
-  if (curImg && curDigimon && curDigimon.anim) {
-    let frame = true;
-    curImg.src = curDigimon.anim;
-    this.evoAnimInterval = setInterval(() => {
-      curImg.src = frame ? curDigimon.idle : curDigimon.anim;
-      frame = !frame;
-    }, 400);
+  _getSlotDigimon(side, index) {
+    const digimon = digimonSprites.find(d => d.id === this.evoCenterID);
+    if (!digimon) return null;
+    const ids = side === "right" ? digimon.evo : digimon.pre;
+    if (!ids) return null;
+    const validIDs = ids.filter(id => digimonSprites.find(d => d.id === id));
+    return digimonSprites.find(d => d.id === validIDs[index]) || null;
   }
-}
 
-_resetAllSlotSprites() {
-  ["#evo-slots-right", "#evo-slots-left"].forEach((sel, si) => {
-    const side = si === 0 ? "right" : "left";
-    document.querySelectorAll(`${sel} .evo-slot-inner`).forEach((s, i) => {
-      const d = this._getSlotDigimon(side, i);
-      const img = s.querySelector("img");
-      if (img && d) img.src = d.idle;
+  _stopEvoAnim() {
+    if (this.evoAnimInterval) {
+      clearInterval(this.evoAnimInterval);
+      this.evoAnimInterval = null;
+    }
+  }
+
+  _startEvoAnim(side) {
+    this._stopEvoAnim();
+    const selector = side === "right"
+      ? "#evo-slots-right .evo-slot-inner"
+      : "#evo-slots-left .evo-slot-inner";
+    const slots = document.querySelectorAll(selector);
+    const curImg = slots[this.evoIndex]?.querySelector("img");
+    const curDigimon = this._getSlotDigimon(side, this.evoIndex);
+    if (curImg && curDigimon && curDigimon.anim) {
+      let frame = true;
+      curImg.src = curDigimon.anim;
+      this.evoAnimInterval = setInterval(() => {
+        curImg.src = frame ? curDigimon.idle : curDigimon.anim;
+        frame = !frame;
+      }, 400);
+    }
+  }
+
+  _resetAllSlotSprites() {
+    ["#evo-slots-right", "#evo-slots-left"].forEach((sel, si) => {
+      const side = si === 0 ? "right" : "left";
+      document.querySelectorAll(`${sel} .evo-slot-inner`).forEach((s, i) => {
+        const d = this._getSlotDigimon(side, i);
+        const img = s.querySelector("img");
+        if (img && d) img.src = d.idle;
+      });
     });
-  });
-}
-
-moveEvoCursor(index) {
-  const selector = this.evoSide === "right"
-    ? "#evo-slots-right .evo-slot-inner"
-    : "#evo-slots-left .evo-slot-inner";
-  const slots = document.querySelectorAll(selector);
-  if (!slots.length) return;
-
-  const prevImg = slots[this.evoIndex]?.querySelector("img");
-  const prevDigimon = this._getSlotDigimon(this.evoSide, this.evoIndex);
-  if (prevImg && prevDigimon) prevImg.src = prevDigimon.idle;
-
-  this.evoIndex = Math.max(0, Math.min(index, slots.length - 1));
-  this.updateEvoCursor();
-  this._startEvoAnim(this.evoSide);
-}
-
-switchEvoSide(side) {
-  const rightSlots = document.querySelectorAll("#evo-slots-right .evo-slot-inner");
-  const leftSlots = document.querySelectorAll("#evo-slots-left .evo-slot-inner");
-  if (side === "right" && !rightSlots.length) return;
-  if (side === "left" && !leftSlots.length) return;
-
-  this._stopEvoAnim();
-  this._resetAllSlotSprites();
-
-  const old = document.getElementById("evo-cursor");
-  if (old) old.remove();
-
-  const selector = side === "right"
-    ? "#evo-slots-right .evo-slot-inner"
-    : "#evo-slots-left .evo-slot-inner";
-  const slots = document.querySelectorAll(selector);
-  if (!slots.length) return;
-
-  this.evoSide = side;
-  this.evoIndex = 0;
-  this.updateEvoCursor();
-  this._startEvoAnim(side);
-  this.playMoveSound();
-}
-
-confirmEvoSlot() {
-  const selected = this._getSlotDigimon(this.evoSide, this.evoIndex);
-  if (!selected) return;
-
-  if (this.soundEnabled) {
-    const sound = this.selectSound.cloneNode();
-    sound.volume = this.selectSound.volume;
-    sound.play();
   }
 
-  this.evoCenterID = selected.id;
-  this._stopEvoAnim();
+  moveEvoCursor(index) {
+    const selector = this.evoSide === "right"
+      ? "#evo-slots-right .evo-slot-inner"
+      : "#evo-slots-left .evo-slot-inner";
+    const slots = document.querySelectorAll(selector);
+    if (!slots.length) return;
 
-  const centerImg = document.getElementById("center-digimon");
-  if (centerImg) centerImg.src = selected.idle;
+    const prevImg = slots[this.evoIndex]?.querySelector("img");
+    const prevDigimon = this._getSlotDigimon(this.evoSide, this.evoIndex);
+    if (prevImg && prevDigimon) prevImg.src = prevDigimon.idle;
 
-  this.updateStats(selected);
-  this.clearEvoLines();
-  this.clearPreLines();
-  this.createRightEvoSlots();
-  this.createLeftEvoSlots();
-  setTimeout(() => this.drawEvoLines(this.currentLayout), 50);
-  setTimeout(() => this.drawPreLines(this.currentPreLayout), 50);
-
-this.evoIndex = 0;
-setTimeout(() => {
-  const rightSlots = document.querySelectorAll("#evo-slots-right .evo-slot-inner");
-  const leftSlots = document.querySelectorAll("#evo-slots-left .evo-slot-inner");
-  const old = document.getElementById("evo-cursor");
-  if (old) old.remove();
-  if (rightSlots.length) {
-    this.evoSide = "right";
+    this.evoIndex = Math.max(0, Math.min(index, slots.length - 1));
     this.updateEvoCursor();
-    this._startEvoAnim("right");
-  } else if (leftSlots.length) {
-    this.evoSide = "left";
-    this.updateEvoCursor();
-    this._startEvoAnim("left");
+    this._startEvoAnim(this.evoSide);
   }
-}, 60);
-}
 
-updateEvoCursor() {
-  const selector = this.evoSide === "right"
-    ? "#evo-slots-right .evo-slot"
-    : "#evo-slots-left .evo-slot";
-  const slots = document.querySelectorAll(selector);
-  if (!slots.length) return;
+  switchEvoSide(side) {
+    const rightSlots = document.querySelectorAll("#evo-slots-right .evo-slot-inner");
+    const leftSlots = document.querySelectorAll("#evo-slots-left .evo-slot-inner");
+    if (side === "right" && !rightSlots.length) return;
+    if (side === "left" && !leftSlots.length) return;
 
-  let cursor = document.getElementById("evo-cursor");
-  if (!cursor) {
-    cursor = document.createElement("img");
-    cursor.id = "evo-cursor";
-    cursor.src = "images/cursor.png";
-    cursor.style.cssText = `
+    this._stopEvoAnim();
+    this._resetAllSlotSprites();
+
+    const old = document.getElementById("evo-cursor");
+    if (old) old.remove();
+
+    const selector = side === "right"
+      ? "#evo-slots-right .evo-slot-inner"
+      : "#evo-slots-left .evo-slot-inner";
+    const slots = document.querySelectorAll(selector);
+    if (!slots.length) return;
+
+    this.evoSide = side;
+    this.evoIndex = 0;
+    this.updateEvoCursor();
+    this._startEvoAnim(side);
+    this.playMoveSound();
+  }
+
+  confirmEvoSlot() {
+    const selected = this._getSlotDigimon(this.evoSide, this.evoIndex);
+    if (!selected) return;
+
+    if (this.soundEnabled) {
+      const sound = this.selectSound.cloneNode();
+      sound.volume = this.selectSound.volume;
+      sound.play();
+    }
+
+    this.evoCenterID = selected.id;
+    this._stopEvoAnim();
+
+    const centerImg = document.getElementById("center-digimon");
+    if (centerImg) centerImg.src = selected.idle;
+
+    this.updateStats(selected);
+    this.clearEvoLines();
+    this.clearPreLines();
+    this.createRightEvoSlots();
+    this.createLeftEvoSlots();
+    setTimeout(() => this.drawEvoLines(this.currentLayout), 50);
+    setTimeout(() => this.drawPreLines(this.currentPreLayout), 50);
+
+    this.evoIndex = 0;
+    setTimeout(() => {
+      const rightSlots = document.querySelectorAll("#evo-slots-right .evo-slot-inner");
+      const leftSlots = document.querySelectorAll("#evo-slots-left .evo-slot-inner");
+      const old = document.getElementById("evo-cursor");
+      if (old) old.remove();
+      if (rightSlots.length) {
+        this.evoSide = "right";
+        this.updateEvoCursor();
+        this._startEvoAnim("right");
+      } else if (leftSlots.length) {
+        this.evoSide = "left";
+        this.updateEvoCursor();
+        this._startEvoAnim("left");
+      }
+    }, 60);
+  }
+
+  updateEvoCursor() {
+    const selector = this.evoSide === "right"
+      ? "#evo-slots-right .evo-slot"
+      : "#evo-slots-left .evo-slot";
+    const slots = document.querySelectorAll(selector);
+    if (!slots.length) return;
+
+    let cursor = document.getElementById("evo-cursor");
+    if (!cursor) {
+      cursor = document.createElement("img");
+      cursor.id = "evo-cursor";
+      cursor.src = "images/cursor.png";
+      cursor.style.cssText = `
       position: absolute;
       pointer-events: none;
       image-rendering: pixelated;
       z-index: 30;
     `;
-    document.getElementById("evo-ui").appendChild(cursor);
+      document.getElementById("evo-ui").appendChild(cursor);
+    }
+
+    const slot = slots[this.evoIndex];
+    if (!slot) return;
+
+    const uiRect = document.getElementById("evo-ui").getBoundingClientRect();
+    const slotRect = slot.getBoundingClientRect();
+    const width = slotRect.width * 1.15;
+    const height = slotRect.height;
+
+    cursor.style.width = width + "px";
+    cursor.style.height = height + "px";
+    cursor.style.left = (slotRect.left - uiRect.left - (width - slotRect.width) / 2) + "px";
+    cursor.style.top = (slotRect.top - uiRect.top) + "px";
   }
-
-  const slot = slots[this.evoIndex];
-  if (!slot) return;
-
-  const uiRect = document.getElementById("evo-ui").getBoundingClientRect();
-  const slotRect = slot.getBoundingClientRect();
-  const width = slotRect.width * 1.15;
-  const height = slotRect.height;
-
-  cursor.style.width = width + "px";
-  cursor.style.height = height + "px";
-  cursor.style.left = (slotRect.left - uiRect.left - (width - slotRect.width) / 2) + "px";
-  cursor.style.top = (slotRect.top - uiRect.top) + "px";
-}
 
   closeContent() {
 
@@ -1853,15 +1854,15 @@ updateEvoCursor() {
     this.lastWidth = rect.width;
 
     requestAnimationFrame(() => {
-  this.updateLayout();
-  this.updateCursor();
-if (this.inContent2) {
-  this.drawEvoLines(this.currentLayout);
-  this.drawPreLines(this.currentPreLayout);
-  this.scaleStatusBar();
-  this.updateEvoCursor();
-}
-});
+      this.updateLayout();
+      this.updateCursor();
+      if (this.inContent2) {
+        this.drawEvoLines(this.currentLayout);
+        this.drawPreLines(this.currentPreLayout);
+        this.scaleStatusBar();
+        this.updateEvoCursor();
+      }
+    });
   }
 
   onKey(e) {
@@ -1870,37 +1871,37 @@ if (this.inContent2) {
       this.closeContent();
       return;
     }
-if (this.inEvoSelect) {
-  const selector = this.evoSide === "right"
-    ? "#evo-slots-right .evo-slot-inner"
-    : "#evo-slots-left .evo-slot-inner";
-  const slots = document.querySelectorAll(selector);
+    if (this.inEvoSelect) {
+      const selector = this.evoSide === "right"
+        ? "#evo-slots-right .evo-slot-inner"
+        : "#evo-slots-left .evo-slot-inner";
+      const slots = document.querySelectorAll(selector);
 
-if (["ArrowUp", "w", "W"].includes(e.key)) {
-  if (slots.length && this.evoIndex > 0) {
-    this.moveEvoCursor(this.evoIndex - 1);
-    this.playMoveSound();
-  }
-}
-if (["ArrowDown", "s", "S"].includes(e.key)) {
-  if (slots.length && this.evoIndex < slots.length - 1) {
-    this.moveEvoCursor(this.evoIndex + 1);
-    this.playMoveSound();
-  }
-}
-if (["ArrowRight", "d", "D"].includes(e.key)) {
-  const rightSlots = document.querySelectorAll("#evo-slots-right .evo-slot-inner");
-  if (rightSlots.length && this.evoSide !== "right") this.switchEvoSide("right");
-}
-if (["ArrowLeft", "a", "A"].includes(e.key)) {
-  const leftSlots = document.querySelectorAll("#evo-slots-left .evo-slot-inner");
-  if (leftSlots.length && this.evoSide !== "left") this.switchEvoSide("left");
-}
-  if (e.key === "Enter") {
-    this.confirmEvoSlot();
-  }
-  return;
-}
+      if (["ArrowUp", "w", "W"].includes(e.key)) {
+        if (slots.length && this.evoIndex > 0) {
+          this.moveEvoCursor(this.evoIndex - 1);
+          this.playMoveSound();
+        }
+      }
+      if (["ArrowDown", "s", "S"].includes(e.key)) {
+        if (slots.length && this.evoIndex < slots.length - 1) {
+          this.moveEvoCursor(this.evoIndex + 1);
+          this.playMoveSound();
+        }
+      }
+      if (["ArrowRight", "d", "D"].includes(e.key)) {
+        const rightSlots = document.querySelectorAll("#evo-slots-right .evo-slot-inner");
+        if (rightSlots.length && this.evoSide !== "right") this.switchEvoSide("right");
+      }
+      if (["ArrowLeft", "a", "A"].includes(e.key)) {
+        const leftSlots = document.querySelectorAll("#evo-slots-left .evo-slot-inner");
+        if (leftSlots.length && this.evoSide !== "left") this.switchEvoSide("left");
+      }
+      if (e.key === "Enter") {
+        this.confirmEvoSlot();
+      }
+      return;
+    }
     if (!this.active) return;
     let direction = null;
 
@@ -2329,7 +2330,7 @@ if (["ArrowLeft", "a", "A"].includes(e.key)) {
     stats.forEach(s => {
       const num = document.getElementById(`stat-${s.id}`);
       const fill = document.getElementById(`fill-${s.id}`);
-      if (num)  num.textContent  = String(s.val);
+      if (num) num.textContent = String(s.val);
       if (fill) fill.style.width = `${(s.val / s.max) * 100}%`;
     });
   }

@@ -84,6 +84,7 @@ body {
   cursor: pointer;
   z-index: 30;
   pointer-events: auto;
+  outline: none;
 }
 
 .sound-btn img {
