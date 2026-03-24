@@ -1742,12 +1742,11 @@ updateLayout() {
       if (rightSlots.length) {
         this.evoSide = "right";
         this.updateEvoCursor();
-        this._startEvoAnim("right");
       } else if (leftSlots.length) {
         this.evoSide = "left";
         this.updateEvoCursor();
-        this._startEvoAnim("left");
       }
+      this._startEvoAnim();
     }, 60);
     setTimeout(() => {
       this.scaleStatusBar();
@@ -1954,19 +1953,15 @@ updateLayout() {
     }
   }
 
-  _startEvoAnim(side) {
+  _startEvoAnim() {
     this._stopEvoAnim();
-    const selector = side === "right"
-      ? "#evo-slots-right .evo-slot-inner"
-      : "#evo-slots-left .evo-slot-inner";
-    const slots = document.querySelectorAll(selector);
-    const curImg = slots[this.evoIndex]?.querySelector("img");
-    const curDigimon = this._getSlotDigimon(side, this.evoIndex);
-    if (curImg && curDigimon && curDigimon.anim) {
+    const centerImg = document.getElementById("center-digimon");
+    const centerDigimon = digimonSprites.find(d => d.id === this.evoCenterID);
+    if (centerImg && centerDigimon && centerDigimon.anim) {
       let frame = true;
-      curImg.src = curDigimon.anim;
+      centerImg.src = centerDigimon.anim;
       this.evoAnimInterval = setInterval(() => {
-        curImg.src = frame ? curDigimon.idle : curDigimon.anim;
+        centerImg.src = frame ? centerDigimon.idle : centerDigimon.anim;
         frame = !frame;
       }, 400);
     }
@@ -1990,13 +1985,8 @@ updateLayout() {
     const slots = document.querySelectorAll(selector);
     if (!slots.length) return;
 
-    const prevImg = slots[this.evoIndex]?.querySelector("img");
-    const prevDigimon = this._getSlotDigimon(this.evoSide, this.evoIndex);
-    if (prevImg && prevDigimon) prevImg.src = prevDigimon.idle;
-
     this.evoIndex = Math.max(0, Math.min(index, slots.length - 1));
     this.updateEvoCursor();
-    this._startEvoAnim(this.evoSide);
   }
 
   switchEvoSide(side) {
@@ -2020,7 +2010,7 @@ updateLayout() {
     this.evoSide = side;
     this.evoIndex = 0;
     this.updateEvoCursor();
-    this._startEvoAnim(side);
+    this._startEvoAnim();
     this.playMoveSound();
   }
 
@@ -2062,12 +2052,11 @@ updateLayout() {
       if (rightSlots.length) {
         this.evoSide = "right";
         this.updateEvoCursor();
-        this._startEvoAnim("right");
       } else if (leftSlots.length) {
         this.evoSide = "left";
         this.updateEvoCursor();
-        this._startEvoAnim("left");
       }
+      this._startEvoAnim();
     }, 60);
   }
 
@@ -2679,6 +2668,7 @@ window.chartSystem = new DigimonChart();
 
 function setupMenuSystem() {
   const detoContent = document.getElementById("deto-content");
+  const creditosContent = document.getElementById("creditos-content");
   const buttons = document.querySelectorAll(".menu-btn");
   const chart = document.querySelector(".chart");
   const slots = document.getElementById("slots-container");
@@ -2715,6 +2705,7 @@ function setupMenuSystem() {
         slots.style.display = "block";
         cursor.style.display = "block";
         detoContent.style.display = "none";
+        creditosContent.style.display = "none";
       }
 
       if (page === "deto") {
@@ -2725,6 +2716,24 @@ function setupMenuSystem() {
         cursor.style.display = "none";
         chart.src = "images/conteudo.webp";
         detoContent.style.display = "block";
+        creditosContent.style.display = "none";
+
+        if (window.chartSystem) {
+          window.chartSystem.expandRect.style.opacity = 0;
+          window.chartSystem.inContent2 = false;
+          window.chartSystem.inTransition = false;
+        }
+      }
+
+      if (page === "creditos") {
+
+        window.chartSystem.active = false;
+
+        slots.style.display = "none";
+        cursor.style.display = "none";
+        chart.src = "images/conteudo.webp";
+        detoContent.style.display = "none";
+        creditosContent.style.display = "block";
 
         if (window.chartSystem) {
           window.chartSystem.expandRect.style.opacity = 0;

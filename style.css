@@ -184,6 +184,15 @@ body {
   pointer-events: auto;
 }
 
+.deto-content a {
+  color: #52DEF7;
+  text-decoration: none;
+}
+
+.deto-content a:hover {
+  text-decoration: underline;
+}
+
 /* =========================
    SCROLL
 ========================= */
