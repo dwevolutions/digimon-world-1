@@ -187,7 +187,7 @@ const digimonSprites = [
   { id: "rosa", idle: "sprites/rosa.webp", anim: null, hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0, pre: [""], evo: ["yuramon"] },
 ];
 
-/* build a lookup map once so every find() is O(1) */
+
 const digimonById = Object.fromEntries(digimonSprites.map(d => [d.id, d]));
 
 /* =========================
@@ -226,7 +226,6 @@ class DigimonChart {
     this.currentLayout = null;
     this.currentPreLayout = null;
 
-    /* cached DOM refs */
     this.expandRect = document.getElementById("expand-rect");
     this.closeButton = document.getElementById("close-button");
     this.chart = document.querySelector(".chart");
@@ -430,7 +429,7 @@ class DigimonChart {
     expand.style.width = "0px";
     expand.style.height = "0px";
     expand.style.opacity = "1";
-    expand.offsetHeight; // force reflow
+    expand.offsetHeight;
 
     expand.style.transition = "left .2s ease, top .2s ease, width .2s ease, height .2s ease";
     expand.style.left = (chartRect.left - panelRect.left) + "px";
@@ -441,37 +440,44 @@ class DigimonChart {
     setTimeout(() => { this.expandRect.style.opacity = "0"; this.openContent2(); }, 200);
   }
 
-  playCollapseAnimation() {
-    if (this.inTransition) return;
-    this.inTransition = true;
+playCollapseAnimation() {
+  if (this.inTransition) return;
+  this.inTransition = true;
 
-    const { chartRect, panelRect } = this._getChartMetrics();
-    const slotRect = this.slots[this.currentIndex].getBoundingClientRect();
-    const expand = this.expandRect;
+  this.evoUI.style.display = "none";
+  this.chart.src = "images/chart.webp";
+  this.container.style.display = "block";
+  this.cursor.style.display = "none";     
 
-    const endX = slotRect.left + slotRect.width / 2 - panelRect.left;
-    const endY = slotRect.top + slotRect.height / 2 - panelRect.top;
+  this.expandRect.offsetHeight;
 
-    expand.style.transition = "none";
-    expand.style.left = (chartRect.left - panelRect.left) + "px";
-    expand.style.top = (chartRect.top - panelRect.top) + "px";
-    expand.style.width = chartRect.width + "px";
-    expand.style.height = chartRect.height + "px";
-    expand.style.opacity = "1";
-    expand.offsetHeight;
+  const { chartRect, panelRect } = this._getChartMetrics();
+  const slotRect = this.slots[this.currentIndex].getBoundingClientRect();
+  const expand = this.expandRect;
 
-    expand.style.transition = "left .2s ease, top .2s ease, width .2s ease, height .2s ease";
-    expand.style.left = endX + "px";
-    expand.style.top = endY + "px";
-    expand.style.width = "0px";
-    expand.style.height = "0px";
+  const endX = slotRect.left + slotRect.width / 2 - panelRect.left;
+  const endY = slotRect.top + slotRect.height / 2 - panelRect.top;
 
-    setTimeout(() => {
-      this.expandRect.style.opacity = 0;
-      this.returnToChart();
-      this.inTransition = false;
-    }, 200);
-  }
+  expand.style.transition = "none";
+  expand.style.left = (chartRect.left - panelRect.left) + "px";
+  expand.style.top = (chartRect.top - panelRect.top) + "px";
+  expand.style.width = chartRect.width + "px";
+  expand.style.height = chartRect.height + "px";
+  expand.style.opacity = "1";
+  expand.offsetHeight;
+
+  expand.style.transition = "left .2s ease, top .2s ease, width .2s ease, height .2s ease";
+  expand.style.left = endX + "px";
+  expand.style.top = endY + "px";
+  expand.style.width = "0px";
+  expand.style.height = "0px";
+
+  setTimeout(() => {
+    this.expandRect.style.opacity = 0;
+    this.returnToChart();
+    this.inTransition = false;
+  }, 200);
+}
 
   /* ---- content2 (digimon detail view) ---- */
 
@@ -798,33 +804,28 @@ class DigimonChart {
 
   /* ---- close / return ---- */
 
-  closeContent() {
-    if (!this.inContent2 || this.inTransition) return;
+closeContent() {
+  if (!this.inContent2 || this.inTransition) return;
 
-    this.evoUI.style.display = "none";
-    this.chart.src = "images/chart.webp";
-    this.container.style.display = "block";
-    this.cursor.style.display = "block";
+  this.closeButton.style.opacity = "0";
+  this.closeButton.style.pointerEvents = "none";
+  this.playCloseSound();
 
-    this.inEvoSelect = false;
-    this._stopEvoAnim();
-    const evoCursor = document.getElementById("evo-cursor");
-    if (evoCursor) evoCursor.remove();
+  this.statusBar.style.display = "none";
+  this.infoBar.style.display = "none";
+  this.moodBar.style.display = "none";
+  this.clearEvoLines();
+  this.clearPreLines();
 
-    document.querySelectorAll(".evo-slot-inner").forEach(el => { el.style.pointerEvents = "none"; });
+  this.inEvoSelect = false;
+  this._stopEvoAnim();
+  const evoCursor = document.getElementById("evo-cursor");
+  if (evoCursor) evoCursor.remove();
+  document.querySelectorAll(".evo-slot-inner").forEach(el => { el.style.pointerEvents = "none"; });
 
-    this.closeButton.style.opacity = "0";
-    this.closeButton.style.pointerEvents = "none";
-    this.playCloseSound();
-
-    this.statusBar.style.display = "none";
-    this.infoBar.style.display = "none";
-    this.moodBar.style.display = "none";
-    this.clearEvoLines();
-    this.clearPreLines();
-    this.inContent2 = false;
-    this.active = true;
-  }
+  this.inContent2 = false;
+  this.playCollapseAnimation();
+}
 
   returnToChart() {
     this.statusBar.style.display = "none";
