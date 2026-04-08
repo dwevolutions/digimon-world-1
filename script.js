@@ -72,121 +72,587 @@ const slotsData = [
 ];
 
 const digimonSprites = [
-  { id: "botamon", idle: "sprites/botamon.webp", anim: "sprites/botamon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0, pre: ["verde"], evo: ["koromon"] },
-  { id: "poyomon", idle: "sprites/poyomon.webp", anim: "sprites/poyomon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0, pre: ["laranja"], evo: ["tokomon"] },
-  { id: "punimon", idle: "sprites/punimon.webp", anim: "sprites/punimon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0, pre: ["azul"], evo: ["tsunomon"] },
-  { id: "yuramon", idle: "sprites/yuramon.webp", anim: "sprites/yuramon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0, pre: ["rosa"], evo: ["tanemon"] },
-  { id: "koromon", idle: "sprites/koromon.webp", anim: "sprites/koromon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0, pre: ["botamon"], evo: ["agumon", "gabumon"] },
-  { id: "tokomon", idle: "sprites/tokomon.webp", anim: "sprites/tokomon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0, pre: ["poyomon"], evo: ["patamon", "piyomon"] },
-  { id: "tsunomon", idle: "sprites/tsunomon.webp", anim: "sprites/tsunomon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0, pre: ["punimon"], evo: ["elecmon", "penguinmon"] },
-  { id: "tanemon", idle: "sprites/tanemon.webp", anim: "sprites/tanemon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0, pre: ["yuramon"], evo: ["palmon", "betamon"] },
-  { id: "agumon", idle: "sprites/agumon.webp", anim: "sprites/agumon2.webp", hp: 100, mp: 100, off: 10, def: 0, spd: 0, brn: 0, desc: 0, peso: 15, tecs: 0, lutas: 0, pre: ["koromon"], evo: ["greymon", "meramon", "birdramon", "centarumon", "monochromon", "tyrannomon"] },
-  { id: "gabumon", idle: "sprites/gabumon.webp", anim: "sprites/gabumon2.webp", hp: 0, mp: 0, off: 0, def: 10, spd: 10, brn: 10, desc: 0, peso: 15, tecs: 0, lutas: 2, pre: ["koromon"], evo: ["centarumon", "monochromon", "drimogemon", "tyrannomon", "ogremon", "garurumon"] },
-  { id: "patamon", idle: "sprites/patamon.webp", anim: "sprites/patamon2.webp", hp: 100, mp: 0, off: 10, def: 0, spd: 0, brn: 10, desc: 0, peso: 15, tecs: 0, lutas: 2, pre: ["tokomon"], evo: ["drimogemon", "tyrannomon", "ogremon", "leomon", "angemon", "unimon"] },
-  { id: "elecmon", idle: "sprites/elecmon.webp", anim: "sprites/elecmon2.webp", hp: 100, mp: 0, off: 10, def: 0, spd: 10, brn: 0, desc: 0, peso: 15, tecs: 0, lutas: 2, pre: ["tsunomon"], evo: ["leomon", "angemon", "bakemon", "kokatorimon"] },
-  { id: "piyomon", idle: "sprites/piyomon.webp", anim: "sprites/piyomon2.webp", hp: 0, mp: 100, off: 0, def: 10, spd: 10, brn: 0, desc: 0, peso: 15, tecs: 0, lutas: 2, pre: ["tokomon"], evo: ["birdramon", "airdramon", "kokatorimon", "unimon", "kabuterimon"] },
   {
-    id: "kunemon", idle: "sprites/kunemon.webp", anim: "sprites/kunemon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    id: "botamon",
+    idle: "sprites/botamon.webp",
+    anim: "sprites/botamon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    pre: ["verde"],
+    evo: ["koromon"]
+  },
+  {
+    id: "poyomon",
+    idle: "sprites/poyomon.webp",
+    anim: "sprites/poyomon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    pre: ["laranja"],
+    evo: ["tokomon"]
+  },
+  {
+    id: "punimon",
+    idle: "sprites/punimon.webp",
+    anim: "sprites/punimon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    pre: ["azul"],
+    evo: ["tsunomon"]
+  },
+  {
+    id: "yuramon",
+    idle: "sprites/yuramon.webp",
+    anim: "sprites/yuramon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    pre: ["rosa"],
+    evo: ["tanemon"]
+  },
+  {
+    id: "koromon",
+    idle: "sprites/koromon.webp",
+    anim: "sprites/koromon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    pre: ["botamon"],
+    evo: ["agumon", "gabumon"]
+  },
+  {
+    id: "tokomon",
+    idle: "sprites/tokomon.webp",
+    anim: "sprites/tokomon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    pre: ["poyomon"],
+    evo: ["patamon", "piyomon"]
+  },
+  {
+    id: "tsunomon",
+    idle: "sprites/tsunomon.webp",
+    anim: "sprites/tsunomon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    pre: ["punimon"],
+    evo: ["elecmon", "penguinmon"]
+  },
+  {
+    id: "tanemon",
+    idle: "sprites/tanemon.webp",
+    anim: "sprites/tanemon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    pre: ["yuramon"],
+    evo: ["palmon", "betamon"]
+  },
+  {
+    id: "agumon",
+    idle: "sprites/agumon.webp",
+    anim: "sprites/agumon2.webp",
+    hp: 100, mp: 100, off: 10, def: 0, spd: 0, brn: 0, desc: 0, peso: 15, tecs: 0, lutas: 0,
+    pre: ["koromon"],
+    evo: ["greymon", "meramon", "birdramon", "centarumon", "monochromon", "tyrannomon"]
+  },
+  {
+    id: "gabumon",
+    idle: "sprites/gabumon.webp",
+    anim: "sprites/gabumon2.webp",
+    hp: 0, mp: 0, off: 0, def: 10, spd: 10, brn: 10, desc: 0, peso: 15, tecs: 0, lutas: 2,
+    pre: ["koromon"],
+    evo: ["centarumon", "monochromon", "drimogemon", "tyrannomon", "ogremon", "garurumon"]
+  },
+  {
+    id: "patamon",
+    idle: "sprites/patamon.webp",
+    anim: "sprites/patamon2.webp",
+    hp: 100, mp: 0, off: 10, def: 0, spd: 0, brn: 10, desc: 0, peso: 15, tecs: 0, lutas: 2,
+    pre: ["tokomon"],
+    evo: ["drimogemon", "tyrannomon", "ogremon", "leomon", "angemon", "unimon"]
+  },
+  {
+    id: "elecmon",
+    idle: "sprites/elecmon.webp",
+    anim: "sprites/elecmon2.webp",
+    hp: 100, mp: 0, off: 10, def: 0, spd: 10, brn: 0, desc: 0, peso: 15, tecs: 0, lutas: 2,
+    pre: ["tsunomon"],
+    evo: ["leomon", "angemon", "bakemon", "kokatorimon"]
+  },
+  {
+    id: "piyomon",
+    idle: "sprites/piyomon.webp",
+    anim: "sprites/piyomon2.webp",
+    hp: 0, mp: 100, off: 0, def: 10, spd: 10, brn: 0, desc: 0, peso: 15, tecs: 0, lutas: 2,
+    pre: ["tokomon"],
+    evo: ["birdramon", "airdramon", "kokatorimon", "unimon", "kabuterimon"]
+  },
+  {
+    id: "kunemon",
+    idle: "sprites/kunemon.webp",
+    anim: "sprites/kunemon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
     info: "50% de chance de digievoluir dormindo em Kunemon's Bed com qualquer Digimon Criança.",
     info_en: "There is a 50% chance of digivolving while sleeping in Kunemon's Bed with any Rookie Digimon.",
-    pre: [""], evo: ["bakemon", "kabuterimon", "kuwagamon", "vegiemon"]
+    pre: [""],
+    evo: ["bakemon", "kabuterimon", "kuwagamon", "vegiemon"]
   },
-  { id: "palmon", idle: "sprites/palmon.webp", anim: "sprites/palmon2.webp", hp: 0, mp: 100, off: 0, def: 0, spd: 10, brn: 10, desc: 0, peso: 15, tecs: 0, lutas: 2, pre: ["tanemon"], evo: ["kuwagamon", "vegiemon", "ninjamon", "whamon", "coelamon"] },
-  { id: "betamon", idle: "sprites/betamon.webp", anim: "sprites/betamon2.webp", hp: 100, mp: 100, off: 0, def: 10, spd: 0, brn: 0, desc: 0, peso: 15, tecs: 0, lutas: 2, pre: ["tanemon"], evo: ["seadramon", "whamon", "shellmon", "coelamon"] },
-  { id: "penguinmon", idle: "sprites/penguinmon.webp", anim: "sprites/penguinmon2.webp", hp: 0, mp: 10, off: 0, def: 1, spd: 0, brn: 1, desc: 0, peso: 15, tecs: 0, lutas: 2, pre: ["tsunomon"], evo: ["whamon", "shellmon", "garurumon", "frigimon", "mojyamon"] },
-  { id: "greymon", idle: "sprites/greymon.webp", anim: "sprites/greymon2.webp", hp: 0, mp: 0, off: 100, def: 100, spd: 100, brn: 100, desc: 1, peso: 30, tecs: 35, lutas: 0, disc: 90, pre: ["agumon"], evo: ["metalgreymon", "skullgreymon"] },
-  { id: "monochromon", idle: "sprites/monochromon.webp", anim: "sprites/monochromon2.webp", hp: 1000, mp: 0, off: 0, def: 100, spd: 0, brn: 100, desc: 3, peso: 40, tecs: 35, lutas: 5, pre: ["agumon", "gabumon"], evo: ["metalgreymon", "metalmamemon"] },
-  { id: "ogremon", idle: "sprites/ogremon.webp", anim: "sprites/ogremon2.webp", hp: 1000, mp: 0, off: 100, def: 0, spd: 0, brn: 0, desc: 5, peso: 30, tecs: 35, lutas: 15, pre: ["gabumon", "patamon"], evo: ["andromon", "giromon"] },
-  { id: "airdramon", idle: "sprites/airdramon.webp", anim: "sprites/airdramon2.webp", hp: 0, mp: 1000, off: 0, def: 0, spd: 100, brn: 100, desc: 1, peso: 30, tecs: 35, lutas: 0, disc: 90, pre: ["piyomon"], evo: ["megadramon", "phoenixmon"] },
-  { id: "kuwagamon", idle: "sprites/kuwagamon.webp", anim: "sprites/kuwagamon2.webp", hp: 1000, mp: 1000, off: 100, def: 0, spd: 100, brn: 0, desc: 5, peso: 30, tecs: 28, lutas: 0, pre: ["kunemon", "palmon"], evo: ["hkabuterimon", "piximon"] },
-  { id: "whamon", idle: "sprites/whamon.webp", anim: "sprites/whamon2.webp", hp: 1000, mp: 0, off: 0, def: 0, spd: 0, brn: 100, desc: 5, peso: 40, tecs: 28, lutas: 0, disc: 60, pre: ["palmon", "betamon", "penguinmon"], evo: ["megaseadramon", "mamemon"] },
-  { id: "frigimon", idle: "sprites/frigimon.webp", anim: "sprites/frigimon2.webp", hp: 0, mp: 1000, off: 0, def: 0, spd: 0, brn: 100, desc: 5, peso: 30, tecs: 28, lutas: 0, feliz: 50, pre: ["penguinmon"], evo: ["metalmamemon", "mamemon"] },
   {
-    id: "nanimon", idle: "sprites/nanimon.webp", anim: "sprites/nanimon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0, feliz: -100, disc: 0,
+    id: "palmon",
+    idle: "sprites/palmon.webp",
+    anim: "sprites/palmon2.webp",
+    hp: 0, mp: 100, off: 0, def: 0, spd: 10, brn: 10, desc: 0, peso: 15, tecs: 0, lutas: 2,
+    pre: ["tanemon"],
+    evo: ["kuwagamon", "vegiemon", "ninjamon", "whamon", "coelamon"]
+  },
+  {
+    id: "betamon",
+    idle: "sprites/betamon.webp",
+    anim: "sprites/betamon2.webp",
+    hp: 100, mp: 100, off: 0, def: 10, spd: 0, brn: 0, desc: 0, peso: 15, tecs: 0, lutas: 2,
+    pre: ["tanemon"],
+    evo: ["seadramon", "whamon", "shellmon", "coelamon"]
+  },
+  {
+    id: "penguinmon",
+    idle: "sprites/penguinmon.webp",
+    anim: "sprites/penguinmon2.webp",
+    hp: 0, mp: 10, off: 0, def: 1, spd: 0, brn: 1, desc: 0, peso: 15, tecs: 0, lutas: 2,
+    pre: ["tsunomon"],
+    evo: ["whamon", "shellmon", "garurumon", "frigimon", "mojyamon"]
+  },
+  {
+    id: "greymon",
+    idle: "sprites/greymon.webp",
+    anim: "sprites/greymon2.webp",
+    hp: 0, mp: 0, off: 100, def: 100, spd: 100, brn: 100, desc: 1, peso: 30, tecs: 35, lutas: 0,
+    disc: 90,
+    pre: ["agumon"],
+    evo: ["metalGreymon", "skullGreymon"]
+  },
+  {
+    id: "monochromon",
+    idle: "sprites/monochromon.webp",
+    anim: "sprites/monochromon2.webp",
+    hp: 1000, mp: 0, off: 0, def: 100, spd: 0, brn: 100, desc: 3, peso: 40, tecs: 35, lutas: 5,
+    pre: ["agumon", "gabumon"],
+    evo: ["metalGreymon", "metalMamemon"]
+  },
+  {
+    id: "ogremon",
+    idle: "sprites/ogremon.webp",
+    anim: "sprites/ogremon2.webp",
+    hp: 1000, mp: 0, off: 100, def: 0, spd: 0, brn: 0, desc: 5, peso: 30, tecs: 35, lutas: 15,
+    pre: ["gabumon", "patamon"],
+    evo: ["andromon", "giromon"]
+  },
+  {
+    id: "airdramon",
+    idle: "sprites/airdramon.webp",
+    anim: "sprites/airdramon2.webp",
+    hp: 0, mp: 1000, off: 0, def: 0, spd: 100, brn: 100, desc: 1, peso: 30, tecs: 35, lutas: 0,
+    disc: 90,
+    pre: ["piyomon"],
+    evo: ["megadramon", "phoenixmon"]
+  },
+  {
+    id: "kuwagamon",
+    idle: "sprites/kuwagamon.webp",
+    anim: "sprites/kuwagamon2.webp",
+    hp: 1000, mp: 1000, off: 100, def: 0, spd: 100, brn: 0, desc: 5, peso: 30, tecs: 28, lutas: 0,
+    pre: ["kunemon", "palmon"],
+    evo: ["h. Kabuterimon", "piximon"]
+  },
+  {
+    id: "whamon",
+    idle: "sprites/whamon.webp",
+    anim: "sprites/whamon2.webp",
+    hp: 1000, mp: 0, off: 0, def: 0, spd: 0, brn: 100, desc: 5, peso: 40, tecs: 28, lutas: 0,
+    disc: 60,
+    pre: ["palmon", "betamon", "penguinmon"],
+    evo: ["megaSeadramon", "mamemon"]
+  },
+  {
+    id: "frigimon",
+    idle: "sprites/frigimon.webp",
+    anim: "sprites/frigimon2.webp",
+    hp: 0, mp: 1000, off: 0, def: 0, spd: 0, brn: 100, desc: 5, peso: 30, tecs: 28, lutas: 0,
+    feliz: 50,
+    pre: ["penguinmon"],
+    evo: ["metalMamemon", "mamemon"]
+  },
+  {
+    id: "nanimon",
+    idle: "sprites/nanimon.webp",
+    anim: "sprites/nanimon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    feliz: -100, disc: 0,
     info: "Brigue com qualquer Digimon Novato quando as barras de Felicidade e Disciplina estiverem zeradas.",
     info_en: "Scold any Rookie Digimon when your Happiness and Discipline bars are at zero.",
-    pre: [""], evo: ["digitamamon"]
+    pre: [""],
+    evo: ["digitamamon"]
   },
-  { id: "meramon", idle: "sprites/meramon.webp", anim: "sprites/meramon2.webp", hp: 0, mp: 0, off: 100, def: 0, spd: 0, brn: 0, desc: 5, peso: 20, tecs: 28, lutas: 10, pre: ["agumon"], evo: ["metalgreymon", "andromon"] },
-  { id: "drimogemon", idle: "sprites/drimogemon.webp", anim: "sprites/drimogemon2.webp", hp: 0, mp: 0, off: 100, def: 0, spd: 0, brn: 0, desc: 3, peso: 40, tecs: 28, lutas: 0, feliz: 50, pre: ["gabumon", "patamon"], evo: ["metalgreymon"] },
-  { id: "leomon", idle: "sprites/leomon.webp", anim: "sprites/leomon2.webp", hp: 0, mp: 0, off: 100, def: 0, spd: 100, brn: 100, desc: 1, peso: 20, tecs: 35, lutas: 10, pre: ["patamon", "elecmon"], evo: ["andromon", "mamemon"] },
-  { id: "kokatorimon", idle: "sprites/kokatorimon.webp", anim: "sprites/kokatorimon2.webp", hp: 1000, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 3, peso: 30, tecs: 28, lutas: 0, pre: ["elecmon", "piyomon"], evo: ["phoenixmon", "piximon"] },
-  { id: "vegiemon", idle: "sprites/vegiemon.webp", anim: "sprites/vegiemon2.webp", hp: 0, mp: 1000, off: 0, def: 0, spd: 0, brn: 0, desc: 5, peso: 10, tecs: 21, lutas: 0, feliz: 50, pre: ["kunemon", "palmon"], evo: ["piximon"] },
-  { id: "shellmon", idle: "sprites/shellmon.webp", anim: "sprites/shellmon2.webp", hp: 1000, mp: 0, off: 0, def: 100, spd: 0, brn: 0, desc: 5, peso: 40, tecs: 35, lutas: 0, pre: ["betamon", "penguinmon"], evo: ["hkabuterimon", "megaseadramon"] },
-  { id: "mojyamon", idle: "sprites/mojyamon.webp", anim: "sprites/mojyamon2.webp", hp: 1000, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 5, peso: 20, tecs: 28, lutas: 5, pre: ["penguinmon"], evo: ["skullgreymon", "mamemon"] },
-  { id: "birdramon", idle: "sprites/birdramon.webp", anim: "sprites/birdramon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 100, brn: 0, desc: 3, peso: 20, tecs: 35, lutas: 0, pre: ["agumon", "piyomon"], evo: ["phoenixmon"] },
-  { id: "tyrannomon", idle: "sprites/tyrannomon.webp", anim: "sprites/tyrannomon2.webp", hp: 1000, mp: 0, off: 0, def: 100, spd: 0, brn: 0, desc: 5, peso: 30, tecs: 28, lutas: 5, pre: ["agumon", "gabumon", "patamon"], evo: ["metalgreymon", "megadramon"] },
-  { id: "angemon", idle: "sprites/angemon.webp", anim: "sprites/angemon2.webp", hp: 0, mp: 1000, off: 0, def: 0, spd: 0, brn: 100, desc: 0, peso: 20, tecs: 35, lutas: 0, pre: ["patamon", "elecmon"], evo: ["andromon", "phoenixmon"] },
-  { id: "unimon", idle: "sprites/unimon.webp", anim: "sprites/unimon2.webp", hp: 1000, mp: 0, off: 0, def: 0, spd: 100, brn: 0, desc: 3, peso: 30, tecs: 35, lutas: 10, pre: ["patamon", "piyomon"], evo: ["giromon", "phoenixmon"] },
-  { id: "ninjamon", idle: "sprites/ninjamon.webp", anim: "sprites/ninjamon2.webp", hp: 0, mp: 1000, off: 100, def: 0, spd: 100, brn: 0, desc: 1, peso: 10, tecs: 35, lutas: 15, pre: ["palmon"], evo: ["piximon", "metalmamemon", "mamemon"] },
-  { id: "coelamon", idle: "sprites/coelamon.webp", anim: "sprites/coelamon2.webp", hp: 0, mp: 0, off: 0, def: 100, spd: 0, brn: 0, desc: 3, peso: 30, tecs: 35, lutas: 5, pre: ["palmon", "betamon"], evo: ["megaseadramon"] },
   {
-    id: "numemon", idle: "sprites/numemon.webp", anim: "sprites/numemon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    id: "meramon",
+    idle: "sprites/meramon.webp",
+    anim: "sprites/meramon2.webp",
+    hp: 0, mp: 0, off: 100, def: 0, spd: 0, brn: 0, desc: 5, peso: 20, tecs: 28, lutas: 10,
+    pre: ["agumon"],
+    evo: ["metalGreymon", "andromon"]
+  },
+  {
+    id: "drimogemon",
+    idle: "sprites/drimogemon.webp",
+    anim: "sprites/drimogemon2.webp",
+    hp: 0, mp: 0, off: 100, def: 0, spd: 0, brn: 0, desc: 3, peso: 40, tecs: 28, lutas: 0,
+    feliz: 50,
+    pre: ["gabumon", "patamon"],
+    evo: ["metalGreymon"]
+  },
+  {
+    id: "leomon",
+    idle: "sprites/leomon.webp",
+    anim: "sprites/leomon2.webp",
+    hp: 0, mp: 0, off: 100, def: 0, spd: 100, brn: 100, desc: 1, peso: 20, tecs: 35, lutas: 10,
+    pre: ["patamon", "elecmon"],
+    evo: ["andromon", "mamemon"]
+  },
+  {
+    id: "kokatorimon",
+    idle: "sprites/kokatorimon.webp",
+    anim: "sprites/kokatorimon2.webp",
+    hp: 1000, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 3, peso: 30, tecs: 28, lutas: 0,
+    pre: ["elecmon", "piyomon"],
+    evo: ["phoenixmon", "piximon"]
+  },
+  {
+    id: "vegiemon",
+    idle: "sprites/vegiemon.webp",
+    anim: "sprites/vegiemon2.webp",
+    hp: 0, mp: 1000, off: 0, def: 0, spd: 0, brn: 0, desc: 5, peso: 10, tecs: 21, lutas: 0,
+    feliz: 50,
+    pre: ["kunemon", "palmon"],
+    evo: ["piximon"]
+  },
+  {
+    id: "shellmon",
+    idle: "sprites/shellmon.webp",
+    anim: "sprites/shellmon2.webp",
+    hp: 1000, mp: 0, off: 0, def: 100, spd: 0, brn: 0, desc: 5, peso: 40, tecs: 35, lutas: 0,
+    pre: ["betamon", "penguinmon"],
+    evo: ["h. Kabuterimon", "megaSeadramon"]
+  },
+  {
+    id: "mojyamon",
+    idle: "sprites/mojyamon.webp",
+    anim: "sprites/mojyamon2.webp",
+    hp: 1000, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 5, peso: 20, tecs: 28, lutas: 5,
+    pre: ["penguinmon"],
+    evo: ["skullGreymon", "mamemon"]
+  },
+  {
+    id: "birdramon",
+    idle: "sprites/birdramon.webp",
+    anim: "sprites/birdramon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 100, brn: 0, desc: 3, peso: 20, tecs: 35, lutas: 0,
+    pre: ["agumon", "piyomon"],
+    evo: ["phoenixmon"]
+  },
+  {
+    id: "tyrannomon",
+    idle: "sprites/tyrannomon.webp",
+    anim: "sprites/tyrannomon2.webp",
+    hp: 1000, mp: 0, off: 0, def: 100, spd: 0, brn: 0, desc: 5, peso: 30, tecs: 28, lutas: 5,
+    pre: ["agumon", "gabumon", "patamon"],
+    evo: ["metalGreymon", "megadramon"]
+  },
+  {
+    id: "angemon",
+    idle: "sprites/angemon.webp",
+    anim: "sprites/angemon2.webp",
+    hp: 0, mp: 1000, off: 0, def: 0, spd: 0, brn: 100, desc: 0, peso: 20, tecs: 35, lutas: 0,
+    pre: ["patamon", "elecmon"],
+    evo: ["andromon", "phoenixmon"]
+  },
+  {
+    id: "unimon",
+    idle: "sprites/unimon.webp",
+    anim: "sprites/unimon2.webp",
+    hp: 1000, mp: 0, off: 0, def: 0, spd: 100, brn: 0, desc: 3, peso: 30, tecs: 35, lutas: 10,
+    pre: ["patamon", "piyomon"],
+    evo: ["giromon", "phoenixmon"]
+  },
+  {
+    id: "ninjamon",
+    idle: "sprites/ninjamon.webp",
+    anim: "sprites/ninjamon2.webp",
+    hp: 0, mp: 1000, off: 100, def: 0, spd: 100, brn: 0, desc: 1, peso: 10, tecs: 35, lutas: 15,
+    pre: ["palmon"],
+    evo: ["piximon", "metalMamemon", "mamemon"]
+  },
+  {
+    id: "coelamon",
+    idle: "sprites/coelamon.webp",
+    anim: "sprites/coelamon2.webp",
+    hp: 0, mp: 0, off: 0, def: 100, spd: 0, brn: 0, desc: 3, peso: 30, tecs: 35, lutas: 5,
+    pre: ["palmon", "betamon"],
+    evo: ["megaSeadramon"]
+  },
+  {
+    id: "numemon",
+    idle: "sprites/numemon.webp",
+    anim: "sprites/numemon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
     info: "Quando o tempo limite para Digievoluir chegar ao fim, qualquer digimon Novato digievolui para Numemon caso não tenha alcançado nenhuma outra condição de digievolução.",
     info_en: "When the time limit for Digivolution expires, any Rookie Digimon will Digivolve into Numemon if it has not met any other Digivolution conditions.",
-    pre: [""], evo: ["monzaemon"]
+    pre: [""],
+    evo: ["monzaemon"]
   },
-  { id: "centarumon", idle: "sprites/centarumon.webp", anim: "sprites/centarumon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 100, desc: 3, peso: 30, tecs: 28, lutas: 0, disc: 60, pre: ["agumon", "gabumon"], evo: ["andromon", "giromon"] },
   {
-    id: "devimon", idle: "sprites/devimon.webp", anim: "sprites/devimon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0, disc: 50,
+    id: "centarumon",
+    idle: "sprites/centarumon.webp",
+    anim: "sprites/centarumon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 100, desc: 3, peso: 30, tecs: 28, lutas: 0,
+    disc: 60,
+    pre: ["agumon", "gabumon"],
+    evo: ["andromon", "giromon"]
+  },
+  {
+    id: "devimon",
+    idle: "sprites/devimon.webp",
+    anim: "sprites/devimon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    disc: 50,
     info: "Angemon tem 50% de chance de digievoluir para Devimon após perder uma vida com 50% ou menos de disciplina.",
     info_en: "Angemon has a 50% chance of Digivolving into Devimon after losing a life with its Discipline bar at 50% or less.",
-    pre: [""], evo: ["skullgryemon", "megadramon"]
+    pre: [""],
+    evo: ["skullgryemon", "megadramon"]
   },
-  { id: "bakemon", idle: "sprites/bakemon.webp", anim: "sprites/bakemon2.webp", hp: 0, mp: 1000, off: 0, def: 0, spd: 0, brn: 0, desc: 3, peso: 20, tecs: 28, lutas: 0, feliz: 50, pre: ["elecmon", "kunemon"], evo: ["skullgreymon", "giromon"] },
-  { id: "kabuterimon", idle: "sprites/kabuterimon.webp", anim: "sprites/kabuterimon2.webp", hp: 1000, mp: 1000, off: 100, def: 0, spd: 100, brn: 0, desc: 1, peso: 30, tecs: 35, lutas: 0, pre: ["piyomon", "kunemon"], evo: ["hkabuterimon", "metalmamemon"] },
-  { id: "seadramon", idle: "sprites/seadramon.webp", anim: "sprites/seadramon2.webp", hp: 1000, mp: 1000, off: 0, def: 0, spd: 0, brn: 0, desc: 3, peso: 30, tecs: 28, lutas: 5, pre: ["betamon"], evo: ["megadramon", "megaseadramon"] },
-  { id: "garurumon", idle: "sprites/garurumon.webp", anim: "sprites/garurumon2.webp", hp: 0, mp: 1000, off: 0, def: 0, spd: 100, brn: 0, desc: 1, peso: 30, tecs: 28, lutas: 0, disc: 90, pre: ["gabumon", "penguinmon"], evo: ["skullgreymon", "megaseadramon"] },
   {
-    id: "sukamon", idle: "sprites/sukamon.webp", anim: "sprites/sukamon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    id: "bakemon",
+    idle: "sprites/bakemon.webp",
+    anim: "sprites/bakemon2.webp",
+    hp: 0, mp: 1000, off: 0, def: 0, spd: 0, brn: 0, desc: 3, peso: 20, tecs: 28, lutas: 0,
+    feliz: 50,
+    pre: ["elecmon", "kunemon"],
+    evo: ["skullGreymon", "giromon"]
+  },
+  {
+    id: "kabuterimon",
+    idle: "sprites/kabuterimon.webp",
+    anim: "sprites/kabuterimon2.webp",
+    hp: 1000, mp: 1000, off: 100, def: 0, spd: 100, brn: 0, desc: 1, peso: 30, tecs: 35, lutas: 0,
+    pre: ["piyomon", "kunemon"],
+    evo: ["h. Kabuterimon", "metalMamemon"]
+  },
+  {
+    id: "seadramon",
+    idle: "sprites/seadramon.webp",
+    anim: "sprites/seadramon2.webp",
+    hp: 1000, mp: 1000, off: 0, def: 0, spd: 0, brn: 0, desc: 3, peso: 30, tecs: 28, lutas: 5,
+    pre: ["betamon"],
+    evo: ["megadramon", "megaSeadramon"]
+  },
+  {
+    id: "garurumon",
+    idle: "sprites/garurumon.webp",
+    anim: "sprites/garurumon2.webp",
+    hp: 0, mp: 1000, off: 0, def: 0, spd: 100, brn: 0, desc: 1, peso: 30, tecs: 28, lutas: 0,
+    disc: 90,
+    pre: ["gabumon", "penguinmon"],
+    evo: ["skullGreymon", "megaSeadramon"]
+  },
+  {
+    id: "sukamon",
+    idle: "sprites/sukamon.webp",
+    anim: "sprites/sukamon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
     info: "Deixe qualquer digimon fazer cocô no chão 16 vezes.",
     info_en: "Have any Digimon poop on the floor 16 times.",
-    pre: [""], evo: ["etemon"]
+    pre: [""],
+    evo: ["etemon"]
   },
-  { id: "metalgreymon", idle: "sprites/metalgreymon.webp", anim: "sprites/metalgreymon2.webp", hp: 4000, mp: 3000, off: 500, def: 500, spd: 300, brn: 300, desc: 10, peso: 65, tecs: 30, lutas: 30, disc: 95, pre: ["greymon", "meramon", "monochromon", "drimogemon", "tyrannomon"], evo: [""] },
-  { id: "skullgreymon", idle: "sprites/skullgreymon.webp", anim: "sprites/skullgreymon2.webp", hp: 4000, mp: 6000, off: 400, def: 400, spd: 200, brn: 500, desc: 10, peso: 30, tecs: 45, lutas: 40, pre: ["greymon", "devimon", "bakemon", "garurumon", "mojyamon"], evo: [""] },
-  { id: "giromon", idle: "sprites/giromon.webp", anim: "sprites/giromon2.webp", hp: 0, mp: 0, off: 400, def: 0, spd: 300, brn: 400, desc: 15, peso: 5, tecs: 35, lutas: 100, feliz: 95, pre: ["centarumon", "ogremon", "bakemon", "unimon"], evo: [""] },
-  { id: "hkabuterimon", idle: "sprites/hkabuterimon.webp", anim: "sprites/hkabuterimon2.webp", hp: 7000, mp: 0, off: 400, def: 600, spd: 400, brn: 0, desc: 5, peso: 55, tecs: 40, lutas: 0, pre: ["kabuterimon", "kuwagamon", "shellmon"], evo: [""] },
-  { id: "metalmamemon", idle: "sprites/metalmamemon.webp", anim: "sprites/metalmamemon2.webp", hp: 0, mp: 0, off: 500, def: 400, spd: 400, brn: 400, desc: 15, peso: 10, tecs: 30, lutas: 0, feliz: 95, pre: ["monochromon", "kabuterimon", "ninjamon", "frigimon"], evo: [""] },
-  { id: "megaseadramon", idle: "sprites/megaseadramon.webp", anim: "sprites/megaseadramon2.webp", hp: 0, mp: 4000, off: 500, def: 400, spd: 0, brn: 400, desc: 5, peso: 30, tecs: 40, lutas: 0, pre: ["seadramon", "whamon", "shellmon", "coelamon", "garurumon"], evo: [""] },
   {
-    id: "vademon", idle: "sprites/vademon.webp", anim: "sprites/vademon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    id: "metalGreymon",
+    idle: "sprites/metalgreymon.webp",
+    anim: "sprites/metalgreymon2.webp",
+    hp: 4000, mp: 3000, off: 500, def: 500, spd: 300, brn: 300, desc: 10, peso: 65, tecs: 30, lutas: 30,
+    disc: 95,
+    pre: ["greymon", "meramon", "monochromon", "drimogemon", "tyrannomon"],
+    evo: [""]
+  },
+  {
+    id: "skullGreymon",
+    idle: "sprites/skullgreymon.webp",
+    anim: "sprites/skullgreymon2.webp",
+    hp: 4000, mp: 6000, off: 400, def: 400, spd: 200, brn: 500, desc: 10, peso: 30, tecs: 45, lutas: 40,
+    pre: ["greymon", "devimon", "bakemon", "garurumon", "mojyamon"],
+    evo: [""]
+  },
+  {
+    id: "giromon",
+    idle: "sprites/giromon.webp",
+    anim: "sprites/giromon2.webp",
+    hp: 0, mp: 0, off: 400, def: 0, spd: 300, brn: 400, desc: 15, peso: 5, tecs: 35, lutas: 100,
+    feliz: 95,
+    pre: ["centarumon", "ogremon", "bakemon", "unimon"],
+    evo: [""]
+  },
+  {
+    id: "h. Kabuterimon",
+    idle: "sprites/hkabuterimon.webp",
+    anim: "sprites/hkabuterimon2.webp",
+    hp: 7000, mp: 0, off: 400, def: 600, spd: 400, brn: 0, desc: 5, peso: 55, tecs: 40, lutas: 0,
+    pre: ["kabuterimon", "kuwagamon", "shellmon"],
+    evo: [""]
+  },
+  {
+    id: "metalMamemon",
+    idle: "sprites/metalmamemon.webp",
+    anim: "sprites/metalmamemon2.webp",
+    hp: 0, mp: 0, off: 500, def: 400, spd: 400, brn: 400, desc: 15, peso: 10, tecs: 30, lutas: 0,
+    feliz: 95,
+    pre: ["monochromon", "kabuterimon", "ninjamon", "frigimon"],
+    evo: [""]
+  },
+  {
+    id: "megaSeadramon",
+    idle: "sprites/megaseadramon.webp",
+    anim: "sprites/megaseadramon2.webp",
+    hp: 0, mp: 4000, off: 500, def: 400, spd: 0, brn: 400, desc: 5, peso: 30, tecs: 40, lutas: 0,
+    pre: ["seadramon", "whamon", "shellmon", "coelamon", "garurumon"],
+    evo: [""]
+  },
+  {
+    id: "vademon",
+    idle: "sprites/vademon.webp",
+    anim: "sprites/vademon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
     info: "Elogie um Digimon Campeão após 240 horas com ele. Ao atingir 360 horas, ele terá 50% de chance de digievoluir.",
     info_en: "Praise a Champion Digimon after spending 240 hours with it. Once you reach 360 hours, it will have a 50% chance of Digivolving.",
-    pre: [""], evo: [""]
+    pre: [""],
+    evo: [""]
   },
-  { id: "etemon", idle: "sprites/etemon.webp", anim: "sprites/etemon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 49, lutas: 50, pre: ["sukamon"], evo: [""] },
-  { id: "andromon", idle: "sprites/andromon.webp", anim: "sprites/andromon2.webp", hp: 2000, mp: 4000, off: 200, def: 400, spd: 200, brn: 400, desc: 5, peso: 40, tecs: 30, lutas: 30, disc: 95, pre: ["meramon", "centarumon", "ogremon", "leomon", "angemon"], evo: [""] },
-  { id: "megadramon", idle: "sprites/megadramon.webp", anim: "sprites/megadramon2.webp", hp: 3000, mp: 5000, off: 500, def: 300, spd: 400, brn: 400, desc: 10, peso: 55, tecs: 30, lutas: 30, pre: ["tyrannomon", "devimon", "airdramon", "seadramon"], evo: [""] },
-  { id: "phoenixmon", idle: "sprites/phoenixmon.webp", anim: "sprites/phoenixmon2.webp", hp: 4000, mp: 4000, off: 0, def: 0, spd: 400, brn: 600, desc: 3, peso: 30, tecs: 40, lutas: 0, disc: 100, pre: ["birdramon", "angemon", "airdramon", "kokatorimon", "unimon"], evo: [""] },
-  { id: "piximon", idle: "sprites/piximon.webp", anim: "sprites/piximon2.webp", hp: 0, mp: 0, off: 300, def: 300, spd: 400, brn: 400, desc: 15, peso: 5, tecs: 25, lutas: 0, feliz: 95, pre: ["kokatorimon", "kuwagamon", "vegiemon", "ninjamon"], evo: [""] },
-  { id: "mamemon", idle: "sprites/mamemon.webp", anim: "sprites/mamemon2.webp", hp: 0, mp: 0, off: 400, def: 300, spd: 400, brn: 400, desc: 15, peso: 5, tecs: 25, lutas: 0, feliz: 90, pre: ["leomon", "ninjamon", "whamon", "frigimon", "mojyamon"], evo: [""] },
-  { id: "monzaemon", idle: "sprites/monzaemon.webp", anim: "sprites/monzaemon2.webp", hp: 3000, mp: 3000, off: 300, def: 300, spd: 300, brn: 300, desc: 0, peso: 40, tecs: 49, lutas: 50, pre: ["numemon"], evo: [""] },
-  { id: "digitamamon", idle: "sprites/digitamamon.webp", anim: "sprites/digitamamon2.webp", hp: 3000, mp: 3000, off: 400, def: 400, spd: 400, brn: 300, desc: 0, peso: 10, tecs: 49, lutas: 100, pre: ["nanimon"], evo: [""] },
   {
-    id: "panjyamon", idle: "sprites/panjyamon.webp", anim: "sprites/panjyamon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    id: "etemon",
+    idle: "sprites/etemon.webp",
+    anim: "sprites/etemon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 49, lutas: 50,
+    pre: ["sukamon"],
+    evo: [""]
+  },
+  {
+    id: "andromon",
+    idle: "sprites/andromon.webp",
+    anim: "sprites/andromon2.webp",
+    hp: 2000, mp: 4000, off: 200, def: 400, spd: 200, brn: 400, desc: 5, peso: 40, tecs: 30, lutas: 30,
+    disc: 95,
+    pre: ["meramon", "centarumon", "ogremon", "leomon", "angemon"],
+    evo: [""]
+  },
+  {
+    id: "megadramon",
+    idle: "sprites/megadramon.webp",
+    anim: "sprites/megadramon2.webp",
+    hp: 3000, mp: 5000, off: 500, def: 300, spd: 400, brn: 400, desc: 10, peso: 55, tecs: 30, lutas: 30,
+    pre: ["tyrannomon", "devimon", "airdramon", "seadramon"],
+    evo: [""]
+  },
+  {
+    id: "phoenixmon",
+    idle: "sprites/phoenixmon.webp",
+    anim: "sprites/phoenixmon2.webp",
+    hp: 4000, mp: 4000, off: 0, def: 0, spd: 400, brn: 600, desc: 3, peso: 30, tecs: 40, lutas: 0,
+    disc: 100,
+    pre: ["birdramon", "angemon", "airdramon", "kokatorimon", "unimon"],
+    evo: [""]
+  },
+  {
+    id: "piximon",
+    idle: "sprites/piximon.webp",
+    anim: "sprites/piximon2.webp",
+    hp: 0, mp: 0, off: 300, def: 300, spd: 400, brn: 400, desc: 15, peso: 5, tecs: 25, lutas: 0,
+    feliz: 95,
+    pre: ["kokatorimon", "kuwagamon", "vegiemon", "ninjamon"],
+    evo: [""]
+  },
+  {
+    id: "mamemon",
+    idle: "sprites/mamemon.webp",
+    anim: "sprites/mamemon2.webp",
+    hp: 0, mp: 0, off: 400, def: 300, spd: 400, brn: 400, desc: 15, peso: 5, tecs: 25, lutas: 0,
+    feliz: 90,
+    pre: ["leomon", "ninjamon", "whamon", "frigimon", "mojyamon"],
+    evo: [""]
+  },
+  {
+    id: "monzaemon",
+    idle: "sprites/monzaemon.webp",
+    anim: "sprites/monzaemon2.webp",
+    hp: 3000, mp: 3000, off: 300, def: 300, spd: 300, brn: 300, desc: 0, peso: 40, tecs: 49, lutas: 50,
+    pre: ["numemon"],
+    evo: [""]
+  },
+  {
+    id: "digitamamon",
+    idle: "sprites/digitamamon.webp",
+    anim: "sprites/digitamamon2.webp",
+    hp: 3000, mp: 3000, off: 400, def: 400, spd: 400, brn: 300, desc: 0, peso: 10, tecs: 49, lutas: 100,
+    pre: ["nanimon"],
+    evo: [""]
+  },
+  {
+    id: "panjyamon",
+    idle: "sprites/panjyamon.webp",
+    anim: "sprites/panjyamon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
     info: "Digievolui apenas com cheats usando o item Noble Mane.",
     info_en: "It can only Digivolve using cheats with the Noble Mane item.",
-    pre: [""], evo: [""]
+    pre: [""],
+    evo: [""]
   },
   {
-    id: "gigadramon", idle: "sprites/gigadramon.webp", anim: "sprites/gigadramon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    id: "gigadramon",
+    idle: "sprites/gigadramon.webp",
+    anim: "sprites/gigadramon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
     info: "Digievolui apenas com cheats usando o item Giga Hand.",
     info_en: "It can only Digivolve using cheats with the Giga Hand item.",
-    pre: [""], evo: [""]
+    pre: [""],
+    evo: [""]
   },
   {
-    id: "metaletemon", idle: "sprites/metaletemon.webp", anim: "sprites/metaletemon2.webp", hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    id: "metalEtemon",
+    idle: "sprites/metaletemon.webp",
+    anim: "sprites/metaletemon2.webp",
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
     info: "Digievolui apenas com cheats usando o item Metal Banana.",
     info_en: "It can only Digivolve using cheats with the Metal Banana item.",
-    pre: [""], evo: [""]
+    pre: [""],
+    evo: [""]
   },
-  { id: "verde", idle: "sprites/verde.webp", anim: null, hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0, pre: [""], evo: ["botamon"] },
-  { id: "azul", idle: "sprites/azul.webp", anim: null, hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0, pre: [""], evo: ["punimon"] },
-  { id: "laranja", idle: "sprites/laranja.webp", anim: null, hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0, pre: [""], evo: ["poyomon"] },
-  { id: "rosa", idle: "sprites/rosa.webp", anim: null, hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0, pre: [""], evo: ["yuramon"] },
+  {
+    id: "verde",
+    idle: "sprites/verde.webp",
+    anim: null,
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    pre: [""],
+    evo: ["botamon"]
+  },
+  {
+    id: "azul",
+    idle: "sprites/azul.webp",
+    anim: null,
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    pre: [""],
+    evo: ["punimon"]
+  },
+  {
+    id: "laranja",
+    idle: "sprites/laranja.webp",
+    anim: null,
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    pre: [""],
+    evo: ["poyomon"]
+  },
+  {
+    id: "rosa",
+    idle: "sprites/rosa.webp",
+    anim: null,
+    hp: 0, mp: 0, off: 0, def: 0, spd: 0, brn: 0, desc: 0, peso: 0, tecs: 0, lutas: 0,
+    pre: [""],
+    evo: ["yuramon"]
+  },
 ];
-
 
 const digimonById = Object.fromEntries(digimonSprites.map(d => [d.id, d]));
 
@@ -237,6 +703,7 @@ class DigimonChart {
     this.moodBar = document.getElementById("mood-bar");
     this.centerDigimonImg = document.getElementById("center-digimon");
     this.evoInfoText = document.getElementById("evo-info-text");
+    this.nameBar = document.getElementById("name-bar");
 
     this.slotImages = [];
     this.slots = [];
@@ -445,6 +912,7 @@ playCollapseAnimation() {
   this.inTransition = true;
 
   this.evoUI.style.display = "none";
+  if (this.nameBar) this.nameBar.style.display = "none";
   this.chart.src = "images/chart.webp";
   this.container.style.display = "block";
   this.cursor.style.display = "none";     
@@ -500,6 +968,9 @@ playCollapseAnimation() {
 
     if (centerDigimon) this.centerDigimonImg.src = centerDigimon.idle;
 
+this.updateNameBar(centerDigimon || null);
+    this.nameBar.style.display = "flex";
+
     this.inContent2 = true;
     this.inTransition = false;
     this.active = false;
@@ -526,6 +997,7 @@ playCollapseAnimation() {
     setTimeout(() => {
       this.scaleStatusBar();
       this.scaleInfoBar();
+      this.scaleNameBar();
       this.updateMood(centerDigimon || null);
       this.scaleMoodBar();
     }, 60);
@@ -575,7 +1047,37 @@ playCollapseAnimation() {
     bar.style.transform = `scale(${scale})`;
   }
 
-  /* ---- data update helpers ---- */
+updateNameBar(digimon) {
+  const el = document.getElementById("name-bar-text");
+  if (!el) return;
+  const raw = digimon?.id || "";
+  const hidden = ["verde", "azul", "rosa", "laranja"];
+  if (!raw || hidden.includes(raw)) { el.textContent = ""; this.nameBar.style.display = "none"; return; }
+  this.nameBar.style.display = "flex";
+  el.textContent = raw.charAt(0).toUpperCase() + raw.slice(1);
+}
+
+  scaleNameBar() {
+    const bar = this.nameBar;
+    const ui = this.evoUI;
+    if (!bar || !ui) return;
+
+    const leftBox = document.querySelector(".evo-box");
+    const centerBox = document.querySelector(".center-box");
+    if (!leftBox || !centerBox) return;
+
+    const uiRect = ui.getBoundingClientRect();
+    const leftRect = leftBox.getBoundingClientRect();
+    const centerRect = centerBox.getBoundingClientRect();
+
+    const barW = centerRect.width * 2.2;
+    const barLeft = centerRect.left - uiRect.left + (centerRect.width - barW) / 2;
+    const barTop = centerRect.top - uiRect.top - centerRect.height * 1.42;
+
+    bar.style.width = barW + "px";
+    bar.style.left = barLeft + "px";
+    bar.style.top = barTop + "px";
+  }
 
   updateInfo(digimon) {
     const d = digimon || { desc: 0, peso: 0, lutas: 0, tecs: 0 };
@@ -748,6 +1250,7 @@ playCollapseAnimation() {
     }
 
     this.evoCenterID = selected.id;
+    this.updateNameBar(selected);
     this._stopEvoAnim();
     if (this.centerDigimonImg) this.centerDigimonImg.src = selected.idle;
 
@@ -1229,13 +1732,26 @@ function autoResizeMenuText() {
     const maxW = span.clientWidth;
     const maxH = span.clientHeight;
     let min = 0, max = 200, best = 0;
+
     while (min <= max) {
       const mid = (min + max) >> 1;
       span.style.fontSize = mid + "px";
       if (span.scrollWidth <= maxW && span.scrollHeight <= maxH) { best = mid; min = mid + 1; }
       else { max = mid - 1; }
     }
-    span.style.fontSize = best + "px";
+
+const len = span.textContent.trim().length;
+let scale;
+if (len <= 7)       scale = 1.8;
+else if (len <= 9)  scale = 1.4;
+else                scale = 1.1;
+
+    span.style.fontSize = Math.min(best * scale, best * 1.8) + "px";
+
+    while (span.scrollWidth > maxW || span.scrollHeight > maxH) {
+      const current = parseFloat(span.style.fontSize);
+      span.style.fontSize = (current - 1) + "px";
+    }
   });
 }
 
@@ -1247,8 +1763,8 @@ window.addEventListener("resize", autoResizeMenuText);
 ========================= */
 
 const i18n = {
-  pt: { "menu-deto": "DETONADO", "menu-creditos": "EXTRA", "info-desc": "DESC.", "info-peso": "PESO", "info-lutas": "LUTAS", "info-tecs": "TECS." },
-  en: { "menu-deto": "WALKTHROUGH", "menu-creditos": "EXTRA", "info-desc": "CARE M.", "info-peso": "WEIGHT", "info-lutas": "BATTLES", "info-tecs": "TECH." }
+  pt: { "menu-deto": "Detonado", "menu-creditos": "Créditos", "info-desc": "DESC.", "info-peso": "PESO", "info-lutas": "LUTAS", "info-tecs": "TECS." },
+  en: { "menu-deto": "Walkthrough", "menu-creditos": "Credits", "info-desc": "CARE M.", "info-peso": "WEIGHT", "info-lutas": "BATTLES", "info-tecs": "TECH." }
 };
 
 function applyLang(lang) {

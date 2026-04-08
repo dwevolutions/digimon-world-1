@@ -138,13 +138,13 @@ body {
 
 .menu-btn span {
   position: absolute;
-  inset: 18% 12%;
+  inset: 1% 12%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   font-family: digimon, sans-serif;
   white-space: nowrap;
-  text-shadow: 0.1cqw 0.1cqw 0 #000;
+  text-shadow: 0.2cqw 0.2cqw 0 #000;
 }
 
 .menu-btn.active span {
@@ -364,6 +364,33 @@ body {
   background: url("images/slot.webp") center / cover no-repeat;
 }
 
+/* ========================= NAME BAR ========================= */
+
+#name-bar {
+  position: absolute;
+  height: 2cqw;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 25;
+  pointer-events: none;
+  padding: 0.3cqw 1.2cqw;
+  box-sizing: border-box;
+  background: #3d5564;
+box-shadow: inset 0.3cqw 0.3cqw 0 #080808, inset -0.3cqw -0.3cqw 0 #6987a0;
+}
+
+#name-bar-text {
+  position: absolute;
+  font-family: digimon, sans-serif;
+  font-size: 4.5cqw;
+  bottom: 0.9cqw;
+  color: #FFFA75;
+  text-shadow: 0.25cqw 0.25cqw 0 #000;
+  white-space: nowrap;
+  line-height: 1;
+}
+
 /* ========================= STATUS BAR ========================= */
 
 #status-bar {
@@ -404,20 +431,20 @@ body {
   z-index: 1;
   font-family: digimon, sans-serif;
   color: #d5d5d5;
-  margin-bottom: 33%;
+  margin-bottom: 4cqw;
   font-size: 3.846cqw;
   line-height: 1;
   pointer-events: none;
 }
 
 .stat-num-lg {
-  margin-bottom: 17%;
+  margin-bottom: 4cqw;
   right: 14.615cqw;
 }
 
 .stat-bar-outer {
   position: relative;
-  padding: 6px;
+  padding: 0.6cqw;
   box-sizing: border-box;
   width: 21.538cqw;
 }
@@ -428,7 +455,7 @@ body {
 
 .stat-bar {
   width: 100%;
-  height: 0.9vh;
+  height: 0.9cqw;
   position: relative;
   overflow: hidden;
 }
@@ -485,9 +512,9 @@ body {
 }
 
 .info-val-box {
-  padding: 3px 6px;
-  width: 4.846cqw;
-  height: 3.077cqw;
+  padding: 0.3cqw 0.6cqw;
+  width: 4.95cqw;
+  height: 3cqw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -498,6 +525,7 @@ body {
 .info-val {
   font-family: digimon, sans-serif;
   font-size: 4.615cqw;
+  padding-bottom: 0.4cqw;
   color: #D5D5D5;
   line-height: 1;
   white-space: nowrap;
