@@ -28,7 +28,10 @@
 				<img src="images/menu_escuro.webp" alt="Deto">
 				<span data-i18n="menu-deto">Detonado</span>
 			</div>
-
+			<div class="menu-btn" data-page="tech">
+				<img src="images/menu_escuro.webp" alt="Tech">
+				<span>Tech</span>
+			</div>
 			<div class="menu-btn" data-page="creditos">
 				<img src="images/menu_escuro.webp" alt="Creditos">
 				<span data-i18n="menu-creditos">Créditos</span>
@@ -64,30 +67,59 @@
 							<div id="mood-left-feliz">
 								<img id="mood-icon-feliz" class="mood-icon">
 							</div>
-							<span class="mood-label"><span id="mood-num-feliz"></span>
+							<span class="mood-label"><span id="mood-num-feliz"></span></span>
 						</div>
 
 						<div id="mood-disc" style="display:none">
 							<div id="mood-left-disc">
 								<img id="mood-icon-disc" class="mood-icon">
 							</div>
-							<span class="mood-label"><span id="mood-num-disc"></span>
+							<span class="mood-label"><span id="mood-num-disc"></span></span>
 						</div>
 					</div>
 				</div>
 
 				<div id="info-bar">
-					<span class="info-label" data-i18n="info-desc">DESC.</span>
-					<div class="info-val-box ui-panel"><span class="info-val" id="info-desc">0</span></div>
-					<span class="info-label" data-i18n="info-peso">PESO</span>
-					<div class="info-val-box ui-panel"><span class="info-val" id="info-peso">0</span></div>
+    <span class="info-label" data-i18n="info-desc">DESC.</span>
+    <svg class="info-val-box" viewBox="0 0 80 48" xmlns="http://www.w3.org/2000/svg">
+        <clipPath id="clip-desc"><rect x="4" y="4" width="72" height="40"/></clipPath>
+        <rect x="0" y="0" width="80" height="48" fill="#080808"/>
+        <rect x="4" y="4" width="76" height="44" fill="#6987a0"/>
+        <rect x="4" y="4" width="72" height="40" fill="#3d5564"/>
+        <text id="info-desc" x="40" y="28" text-anchor="middle" dominant-baseline="middle"
+            clip-path="url(#clip-desc)" font-family="digimon, sans-serif" font-size="56" fill="#d5d5d5">0</text>
+    </svg>
 
-					<span class="info-label" data-i18n="info-lutas">LUTAS</span>
-					<div class="info-val-box ui-panel"><span class="info-val" id="info-lutas">0</span></div>
-					<span class="info-label" data-i18n="info-tecs">TECS.</span>
-					<div class="info-val-box ui-panel"><span class="info-val" id="info-tecs">0</span></div>
+    <span class="info-label" data-i18n="info-peso">PESO</span>
+    <svg class="info-val-box" viewBox="0 0 80 48" xmlns="http://www.w3.org/2000/svg">
+        <clipPath id="clip-peso"><rect x="4" y="4" width="72" height="40"/></clipPath>
+        <rect x="0" y="0" width="80" height="48" fill="#080808"/>
+        <rect x="4" y="4" width="76" height="44" fill="#6987a0"/>
+        <rect x="4" y="4" width="72" height="40" fill="#3d5564"/>
+        <text id="info-peso" x="40" y="28" text-anchor="middle" dominant-baseline="middle"
+            clip-path="url(#clip-peso)" font-family="digimon, sans-serif" font-size="56" fill="#d5d5d5">0</text>
+    </svg>
 
-				</div>
+    <span class="info-label" data-i18n="info-lutas">LUTAS</span>
+    <svg class="info-val-box" viewBox="0 0 80 48" xmlns="http://www.w3.org/2000/svg">
+        <clipPath id="clip-lutas"><rect x="4" y="4" width="72" height="40"/></clipPath>
+        <rect x="0" y="0" width="80" height="48" fill="#080808"/>
+        <rect x="4" y="4" width="76" height="44" fill="#6987a0"/>
+        <rect x="4" y="4" width="72" height="40" fill="#3d5564"/>
+        <text id="info-lutas" x="40" y="28" text-anchor="middle" dominant-baseline="middle"
+            clip-path="url(#clip-lutas)" font-family="digimon, sans-serif" font-size="56" fill="#d5d5d5">0</text>
+    </svg>
+
+    <span class="info-label" data-i18n="info-tecs">TECS.</span>
+    <svg class="info-val-box" viewBox="0 0 80 48" xmlns="http://www.w3.org/2000/svg">
+        <clipPath id="clip-tecs"><rect x="4" y="4" width="72" height="40"/></clipPath>
+        <rect x="0" y="0" width="80" height="48" fill="#080808"/>
+        <rect x="4" y="4" width="76" height="44" fill="#6987a0"/>
+        <rect x="4" y="4" width="72" height="40" fill="#3d5564"/>
+        <text id="info-tecs" x="40" y="28" text-anchor="middle" dominant-baseline="middle"
+            clip-path="url(#clip-tecs)" font-family="digimon, sans-serif" font-size="56" fill="#d5d5d5">0</text>
+    </svg>
+</div>
 
 				<div id="status-bar">
 					<div class="stat-row">
@@ -801,10 +833,21 @@
 						</div>
 					</div>
 
+					<div id="tech-content" class="deto-content no-scroll"></div>
+					<div id="tech-content-en" class="deto-content no-scroll"></div>
+					<div id="tech-slots-container"></div>
+					<div id="tech-enemy-container"></div>
+					<div id="tech-label-partner" style="display:none;"></div>
+					<div id="tech-label-enemy" style="display:none;"></div>
+					<div id="tech-label-chance" style="display:none;"></div>
+					<div id="tech-chance-container" style="display:none;"></div>
+
 					<div id="creditos-content" class="deto-content">
 						<div class="deto-scroll">
 							<p class="titletxt">Sobre</p>
-							<p class="texto">Sou apenas um fã que resolveu juntar informações sobre Digimon World 1 e organizá-las em uma interface simples e bonita. <a href="https://x.com/msandc7" target="_blank">Contato</a>
+							<p class="texto">Sou apenas um fã que resolveu juntar informações sobre Digimon World 1 e
+								organizá-las em uma interface simples e bonita. <a href="https://x.com/msandc7"
+									target="_blank">Contato</a>
 
 							<p class="titletxt">Créditos</p>
 
@@ -828,8 +871,11 @@
 									href="https://docs.google.com/document/d/1Z5-7RhC42F51EdXtMpzbOZ9QL8WKxPLhHh3_-XMDPdU/edit?tab=t.0"
 									target="_blank">Ginoshie e SydMontague</a></p>
 
-									<p class="texto">Detonado: <a
-									href="https://pt.scribd.com/document/892188808/Detonado-01"
+									<p class="texto">Informações das técnicas:  <a
+									href="https://docs.google.com/spreadsheets/d/19E7zgE2JJN4LQnlv9TNzenTaeld5OcRzC99EkiM80Cw/edit?gid=1702553086#gid=1702553086"
+									target="_blank">Ginoshie e SydMontague</a></p>
+
+							<p class="texto">Detonado: <a href="https://pt.scribd.com/document/892188808/Detonado-01"
 									target="_blank">HolyDigitamamon</a></p>
 
 							<p class="titletxt">Recomendações</p>
@@ -852,387 +898,471 @@
 								Native Forest. As soon as you enter, Agumon will challenge you; defeat him so he’ll go
 								to town and set up the bench next to Jijimon’s house.
 
-								<p class="texto">2 – Continue heading down until you find Palmon; talk to her to start a battle. She’ll
+							<p class="texto">2 – Continue heading down until you find Palmon; talk to her to start a
+								battle. She’ll
 								be a tougher opponent than Agumon, as her poison attacks deal significant damage, so
 								bring plenty of healing items to restore your health. Once you defeat her, she’ll go to
 								town to replace Tanemon at the farm.</p>
 
-								<p class="texto">3 – Next to the Native Forest outhouse, heading right, you’ll find the path to Kunemon’s
+							<p class="texto">3 – Next to the Native Forest outhouse, heading right, you’ll find the path
+								to Kunemon’s
 								Bed. Give him some food to start the battle. If you defeat him, he’ll go to the city and
 								clear the path to the Digimon Bridge.</p>
 
-								<p class="titletxt">Tropical Forest</p>
+							<p class="titletxt">Tropical Forest</p>
 
-								<p class="texto">1 – In the afternoon, go to the Digimon Bridge and continue following the path down to
+							<p class="texto">1 – In the afternoon, go to the Digimon Bridge and continue following the
+								path down to
 								find Coela Point. Walk across the Coelamons’ heads to reach the Tropical Forest.</p>
 
-								<p class="texto">2 – Head left and you’ll see that the bridge at Digimon Bridge has been repaired,
+							<p class="texto">2 – Head left and you’ll see that the bridge at Digimon Bridge has been
+								repaired,
 								connecting the city to Tropical Forest.</p>
 
-								<p class="texto">3 – Returning to the starting point of the Tropical Forest, head right and you’ll find a
+							<p class="texto">3 – Returning to the starting point of the Tropical Forest, head right and
+								you’ll find a
 								fork with one path leading up and another to the right; take the right path again to
 								reach Amida Forest. Avoid the arrows and proceed to the end, marked by a red circle.
 								Centarumon will appear and head to the city.</p>
 
-								<p class="texto">4 – Return to the starting point and take the right path again, but this time, when you
+							<p class="texto">4 – Return to the starting point and take the right path again, but this
+								time, when you
 								reach the fork, take the path going up. Talk to Betamon, who will head to the city to
 								set up a small shop.</p>
 
-								<p class="texto">5 – Return to the starting point of the Tropical Forest again, but this time go straight
+							<p class="texto">5 – Return to the starting point of the Tropical Forest again, but this
+								time go straight
 								ahead until you reach Overdell; there you’ll find a path leading to a cemetery. Upon
 								entering Overdell Cemetery, speak with Bakemon; he’ll ask you three questions in another
 								language. Answer Yes, Yes, and No to the questions so that he’ll go to the city to work
 								as a night watchman.</p>
 
-								<p class="titletxt">Drill Tunnel</p>
+							<p class="titletxt">Drill Tunnel</p>
 
-								<p class="texto">1 – The entrance to the Drill Tunnel is in the Native Forest near the town. Inside the
+							<p class="texto">1 – The entrance to the Drill Tunnel is in the Native Forest near the town.
+								Inside the
 								tunnel, there are three paths: left, right, and down. Take the left path to enter the
 								residential area and defeat Drimogemon.
 
-								<p class="texto">2 – Now follow the path to the right and help another Drimogemon remove all the dirt
+							<p class="texto">2 – Now follow the path to the right and help another Drimogemon remove all
+								the dirt
 								from the site. To do this, simply talk to him; you’ll receive a cart to transport the
 								dirt out of the Drill Tunnel. After finishing, return and talk to him again to return
 								the cart and receive money and a skill as rewards. Repeat the process until you’ve
 								removed all the dirt.
 
-								<p class="texto">3 – Enter and exit the Underground Pound after you’ve finished removing the last pile of
+							<p class="texto">3 – Enter and exit the Underground Pound after you’ve finished removing the
+								last pile of
 								dirt. When you return, Drimogemon will have finished digging the tunnel to Lava Cave.
 								Enter it and help him remove the rock from the path to clear the way.
 
-								<p class="texto">4 – Head forward to find Meramon trying to make the volcano erupt. If you interrupt him,
+							<p class="texto">4 – Head forward to find Meramon trying to make the volcano erupt. If you
+								interrupt him,
 								he’ll fight you; he’s very powerful, so make sure you have an Ultimate-level Digimon or
 								a very strong Champion before facing him. After defeating him, he’ll go to the city and
 								set up the restaurant.
 
-								<p class="texto">5 – While still in the Drill Tunnel, talk to all the Drimogemons there. One of them will
+							<p class="texto">5 – While still in the Drill Tunnel, talk to all the Drimogemons there. One
+								of them will
 								clear the shortcut to Mt. Panorama, and another will dig the tunnel to Leomon’s
 								ancestor’s cave, but it will still take a long time for these tunnels to be finished.
 
-								<p class="titletxt">Gear Savanna</p>
+							<p class="titletxt">Gear Savanna</p>
 
-								<p class="texto">1 – The eruption caused by Meramon has cleared the path to Mt. Panorama; follow it until
+							<p class="texto">1 – The eruption caused by Meramon has cleared the path to Mt. Panorama;
+								follow it until
 								you reach Gear Savana. There’s plenty to do there; if it’s within the first 15 days of
 								the month, you can find a small shop selling cards in the area.
 
-								<p class="texto">2 – Search the area to find Elecmon; take 3 shocks from him so he’ll go to the city.
+							<p class="texto">2 – Search the area to find Elecmon; take 3 shocks from him so he’ll go to
+								the city.
 								Still in the same area, head right to find Patamon; defeat him 3 times so he’ll go to
 								the city.
 
-								<p class="texto">3 – After defeating Patamon, take the lower path to find Biyomon. Try to catch him three
+							<p class="texto">3 – After defeating Patamon, take the lower path to find Biyomon. Try to
+								catch him three
 								times until the message “No again! Wait!” appears. He’ll reappear; catch him, and he’ll
 								head to File City to work at the Item Shop!
 
-								<p class="texto">4 – Elsewhere, look for Patamon, but enter from the bottom of the screen to make this
+							<p class="texto">4 – Elsewhere, look for Patamon, but enter from the bottom of the screen to
+								make this
 								happen! Then, take the path on the right, chat with Leomon, and exit.
 
-								<p class="titletxt">Trash Mountain
+							<p class="titletxt">Trash Mountain
 
-								<p class="texto">1 – Right next to Gear Savana’s restroom is the entrance to Trash Mountain. Talk to
+							<p class="texto">1 – Right next to Gear Savana’s restroom is the entrance to Trash Mountain.
+								Talk to
 								Sukamon and grab the fishing rod on the left.
 
-								<p class="texto">2 – Talk to KingSukamon and then to all the other Sukamons in the area. If you do this,
+							<p class="texto">2 – Talk to KingSukamon and then to all the other Sukamons in the area. If
+								you do this,
 								a Sukamon will go to the city to work as a guard near the restroom.
 
-								<p class="titletxt">Ancient Regions</p>
+							<p class="titletxt">Ancient Regions</p>
 
-								<p class="texto">1 – Return to Amida Forest, where you found Centarumon, and head straight ahead to reach
+							<p class="texto">1 – Return to Amida Forest, where you found Centarumon, and head straight
+								ahead to reach
 								the Ancient Dino Region. Here you’ll find Tyrannomon; he’ll only let you pass if you
 								defeat him.
 
-								<p class="texto">2 – Keep going until you reach the bone tunnel in the Ancient Speedy Region. Go ahead
+							<p class="texto">2 – Keep going until you reach the bone tunnel in the Ancient Speedy
+								Region. Go ahead
 								and defeat Saberdramon; after you beat him, he’ll mention the secret passage in the
 								area.
 
-								<p class="texto">3 – The passage is well hidden. As you’re crossing the bone tunnel, keep going left and
+							<p class="texto">3 – The passage is well hidden. As you’re crossing the bone tunnel, keep
+								going left and
 								you’ll enter it. There you’ll find Meteormon; defeat him and return to face Tyrannomon.
 								An animation will play where MasterTyrannomon appears and sends Tyrannomon to the city.
 
-								<p class="texto">4 – Go back to where Meteormon was, and you’ll find Nanimon. He’ll run away and drop the
+							<p class="texto">4 – Go back to where Meteormon was, and you’ll find Nanimon. He’ll run away
+								and drop the
 								Dimensional Key Chain, which will double the number of items you can carry.
 
-								<p class="titletxt">Great Canyon</p>
+							<p class="titletxt">Great Canyon</p>
 
-								<p class="texto">1 – In town, talk to Yuramon so he mentions the invisible bridge in Overdell that leads
+							<p class="texto">1 – In town, talk to Yuramon so he mentions the invisible bridge in
+								Overdell that leads
 								to the Great Canyon. While you’re at it, before heading there, stop by Coela Point and
 								talk to the Coelamons so one of them will go to town; it must be in the afternoon to do
 								this.
 
-								<p class="texto">2 – Cross the invisible bridge to reach the Great Canyon. Enter the shop right next to
+							<p class="texto">2 – Cross the invisible bridge to reach the Great Canyon. Enter the shop
+								right next to
 								it and help Monochromon sell the items; if you earn more than 3,000 bits, he’ll go to
 								the city to help out at the item shop.
 
-								<p class="texto">3 – Ahead, you’ll find a hill; walk up it until the floor drops. Once you’re down below,
+							<p class="texto">3 – Ahead, you’ll find a hill; walk up it until the floor drops. Once
+								you’re down below,
 								take the elevator and go up to the top floor. You’re now in Birdramon’s nest; defeat
 								her, and she’ll go to the city to set up a travel agency.
 
-								<p class="titletxt">Freezeland</p>
+							<p class="titletxt">Freezeland</p>
 
-								<p class="texto">1 – After the Great Canyon is the passage to Freezeland. As soon as you enter the third
+							<p class="texto">1 – After the Great Canyon is the passage to Freezeland. As soon as you
+								enter the third
 								part of this area, you’ll find a fork in the road; take the right path.
 
-								<p class="texto">2 – You are now in the area of the cracked ice; there are four paths to choose from. On
+							<p class="texto">2 – You are now in the area of the cracked ice; there are four paths to
+								choose from. On
 								one of them, you’ll find only enemies; on two of them, you’ll find Mojyamons who want to
 								trade items; and on the other, Penguinmon’s igloo. Defeat Penguinmon in Curling so he’ll
 								go to the city.
 
-								<p class="texto">3 – Return to the fork area and head up. Defeat Garurumon and come back the following
+							<p class="texto">3 – Return to the fork area and head up. Defeat Garurumon and come back the
+								following
 								afternoon to defeat him again. During the second battle, you won’t be able to assist
 								your Digimon, so make sure he’s very strong before fighting him. After you defeat him
 								again, he’ll go to work at the town’s restaurant.
 
-								<p class="titletxt">Misty Trees and Geko Swamp</p>
+							<p class="titletxt">Misty Trees and Geko Swamp</p>
 
-								<p class="texto">1 – Return to Gear Savana and follow the path next to the entrance to Trash Mountain;
+							<p class="texto">1 – Return to Gear Savana and follow the path next to the entrance to Trash
+								Mountain;
 								you’ll be in Geko Swamp. Keep going straight to reach Misty Trees; there, defeat Gabumon
 								and he’ll go to the city.
 
-								<p class="texto">2 – Return to the swamp and defeat Otamamon at night. Several Gekomons will appear and
+							<p class="texto">2 – Return to the swamp and defeat Otamamon at night. Several Gekomons will
+								appear and
 								take you to ShogunGekomon’s palace in Volume Villa; he will cast a spell that will allow
 								you to see better through the fog. After that, the path to Volume Villa will be cleared.
 
-								<p class="texto">3 – Return to Misty Trees; without the fog, you’ll be able to find Cherrymon there. Talk
+							<p class="texto">3 – Return to Misty Trees; without the fog, you’ll be able to find
+								Cherrymon there. Talk
 								to him so he’ll open the path to Toy Town.
 
-								<p class="titletxt">Toy Town</p>
+							<p class="titletxt">Toy Town</p>
 
-								<p class="texto">1 – There are only two houses and a mansion in the town. Enter the first one and check
+							<p class="texto">1 – There are only two houses and a mansion in the town. Enter the first
+								one and check
 								the bear on the sofa. It’s a costume you’ll need to put on Numemon to enter the mansion.
 								To evolve into Numemon, let the evolution timer for a Rookie Digimon run out without it
 								encountering an evolution condition compatible with its abilities.
 
-								<p class="texto">2 – In the second house, talk to Tinmon. Then enter the mansion and choose the right
+							<p class="texto">2 – In the second house, talk to Tinmon. Then enter the mansion and choose
+								the right
 								door to proceed; if you choose the wrong door, a large pot will fall on your head.
 
-								<p class="texto">3 – In the last room, defeat WaruMonzaemon and pick up the Gear item. Return to the
+							<p class="texto">3 – In the last room, defeat WaruMonzaemon and pick up the Gear item.
+								Return to the
 								Tinmons’ house and give the item back to the robot, who is actually a Hagurumon. Doing
 								this will make the Monzaemon costume available at Jijimon’s house.
 
-								<p class="titletxt">Ice Sanctuary</p>
+							<p class="titletxt">Ice Sanctuary</p>
 
-								<p class="texto">1 – The path to the sanctuary is in Freezeland, but you can only enter if you have a
+							<p class="texto">1 – The path to the sanctuary is in Freezeland, but you can only enter if
+								you have a
 								Vaccine-type Digimon. If you’re accompanied by one, it will find the passage beneath the
 								ice statue.
 
-								<p class="texto">2 – In the second room of the sanctuary, follow the dark passage on the right. After the
+							<p class="texto">2 – In the second room of the sanctuary, follow the dark passage on the
+								right. After the
 								passage, you’ll find a spot with some crystals; use them to teleport. Be careful, as
 								some will take you back to the sanctuary’s entrance.
 
-								<p class="texto">3 – When you reach a large area full of Digimon, defeat all the ones around you and
+							<p class="texto">3 – When you reach a large area full of Digimon, defeat all the ones around
+								you and
 								stand next to the light at the bottom in the middle of the room. Return to the sanctuary
 								entrance and talk to Angemon; he will go to File City to work as an informant at
 								Jijimon’s house.
 
-								<p class="titletxt">Mt. Panorama</p>
+							<p class="titletxt">Mt. Panorama</p>
 
-								<p class="texto">1 – Near the entrance to Gear Savana, enter the cave that opened on the right to speak
+							<p class="texto">1 – Near the entrance to Gear Savana, enter the cave that opened on the
+								right to speak
 								with Drimogemon. He will go to File City to open an item mine.
 
-								<p class="titletxt">Grey's Lord Mansion</p>
+							<p class="titletxt">Grey's Lord Mansion</p>
 
-								<p class="texto">1 – To enter this mansion, you’ll need a Virus-type Digimon. Go through any doors you
+							<p class="texto">1 – To enter this mansion, you’ll need a Virus-type Digimon. Go through any
+								doors you
 								can and grab the key inside the fireplace in that room.
 
-								<p class="texto">2 – Check the upper part of the mansion where there are several Rockmons to fall into a
+							<p class="texto">2 – Check the upper part of the mansion where there are several Rockmons to
+								fall into a
 								secret room. Go right and check the coffin to reach the basement.
 
-								<p class="texto">3 – Myotismon will be near death and will give you the Fridge Key. Return to the kitchen
+							<p class="texto">3 – Myotismon will be near death and will give you the Fridge Key. Return
+								to the kitchen
 								and use the key on the refrigerator; the meat won’t be there. Leave the mansion to find
 								the meat on the ground and take it to Myotismon, then leave.
 
-								<p class="titletxt">File City</p>
+							<p class="titletxt">File City</p>
 
-								<p class="texto">1 – Talk to Jijimon and leave; Greymon will appear and challenge you. If you defeat him,
+							<p class="texto">1 – Talk to Jijimon and leave; Greymon will appear and challenge you. If
+								you defeat him,
 								he will open the city arena.
 
-								<p class="titletxt">Great Canyon</p>
+							<p class="titletxt">Great Canyon</p>
 
-								<p class="texto">1 – Talk to Yuramon in town to learn about the bandits terrorizing the Canyon. Go there,
+							<p class="texto">1 – Talk to Yuramon in town to learn about the bandits terrorizing the
+								Canyon. Go there,
 								and Ogremon and his henchmen will confront you. Defeat them and chase after them using
 								the elevator to go down.
 
-								<p class="texto">2 – Talk to Agumon at the fortress entrance so he’ll let you through. At the end,
+							<p class="texto">2 – Talk to Agumon at the fortress entrance so he’ll let you through. At
+								the end,
 								Ogremon and his henchmen will be there; defeat them again and take the elevator up.
 
-								<p class="texto">3 – Defeat the guard. When you’re about to continue, Shellmon will ask for help. Return
+							<p class="texto">3 – Defeat the guard. When you’re about to continue, Shellmon will ask for
+								help. Return
 								to the fortress elevator and go down. Go to the entrance of Freezeland and take the left
 								path to save Shellmon on the bridge; he’ll go to the city to spread the news.
 
-								<p class="titletxt">Secret Beach Cave</p>
+							<p class="titletxt">Secret Beach Cave</p>
 
-								<p class="texto">1 – In the area of the cracked ice in Freezeland, talk to Whamon so he can take you to
+							<p class="texto">1 – In the area of the cracked ice in Freezeland, talk to Whamon so he can
+								take you to
 								Secret Beach Cave. Ogremon will be waiting there with WaruSeadramon and Agumon; defeat
 								them, and he’ll run away again. Whamon will go to the city and set up the port.
 
-								<p class="texto">2 – Return to Secret Beach Cave and take the Misty Egg item from the machine.
+							<p class="texto">2 – Return to Secret Beach Cave and take the Misty Egg item from the
+								machine.
 
-								<p class="titletxt">Drill Tunnel</p>
+							<p class="titletxt">Drill Tunnel</p>
 
-								<p class="texto">1 – Go to the Drill Tunnel to face Ogremon one last time; once you defeat him, he’ll
+							<p class="texto">1 – Go to the Drill Tunnel to face Ogremon one last time; once you defeat
+								him, he’ll
 								give up and head to the city.
 
-								<p class="titletxt">Tropical Forest</p>
+							<p class="titletxt">Tropical Forest</p>
 
-								<p class="texto">1 – On the 15th day of the month, take the Rain Plant next to Tanemon and go to the
+							<p class="texto">1 – On the 15th day of the month, take the Rain Plant next to Tanemon and
+								go to the
 								Tropical Forest. There will be a plant different from the others; use the Rain Plant on
 								it, and Vegiemon will appear. He will go to the city to replace Palmon at the farm.
 
-								<p class="texto">2 – Enter the first screen and exit at different times until Piximon appears. Defeat
+							<p class="texto">2 – Enter the first screen and exit at different times until Piximon
+								appears. Defeat
 								him, and he’ll go to town to sell training manuals.
 
-								<p class="titletxt">Geko Swamp and Dragon Eye Lake</p>
+							<p class="titletxt">Geko Swamp and Dragon Eye Lake</p>
 
-								<p class="texto">1 – Buy several cards and give them to ShogunGekomon. You’ll receive merit points for
+							<p class="texto">1 – Buy several cards and give them to ShogunGekomon. You’ll receive merit
+								points for
 								the cards you give him; the rarer they are, the more points you earn. When you have 300
 								points, buy the Amazing Rod.
 
-								<p class="texto">2 – When you leave, talk to Gekomon at the door so he becomes available as an opponent
+							<p class="texto">2 – When you leave, talk to Gekomon at the door so he becomes available as
+								an opponent
 								in the arena.
 
-								<p class="texto">3 – In the afternoon, go to the smaller part of Dragon Eye Lake; there will be a shadow
+							<p class="texto">3 – In the afternoon, go to the smaller part of Dragon Eye Lake; there will
+								be a shadow
 								larger than the others, always following the same path. Use the rod to catch the owner
 								of the shadow, a gigantic Seadramon. When it appears, choose the first option it offers
 								to win the Blue Flaute; it will allow you to summon it as many times as you want.
 
-								<p class="titletxt">Beetle Land</p>
+							<p class="titletxt">Beetle Land</p>
 
-								<p class="texto">1 – Seadramon will take you to a smaller island near Archive Island called Beetle Land.
+							<p class="texto">1 – Seadramon will take you to a smaller island near Archive Island called
+								Beetle Land.
 								Talk to Tentomon to learn about a tournament; it takes place every 22nd, and you can
 								only participate with an insect Digimon.
 
-								<p class="texto">2 – Then talk to Kabuterimon; he’ll leave for File City to upgrade the equipment at the
+							<p class="texto">2 – Then talk to Kabuterimon; he’ll leave for File City to upgrade the
+								equipment at the
 								Green Gym. After that, talk to Kuwagamon; he’ll help Kabuterimon at the Green Gym. Play
 								the Blue Flaute to return.
 
-								<p class="titletxt">Mt. Panorama</p>
+							<p class="titletxt">Mt. Panorama</p>
 
-								<p class="texto">1 – At Mt. Panorama, check the alien mark on the ground, then return to the city and
+							<p class="texto">1 – At Mt. Panorama, check the alien mark on the ground, then return to the
+								city and
 								read Shellmon’s news report about a UFO that was spotted in the area. Go back to the
 								place where you saw the alien mark and you’ll find more of them; then return to the city
 								again and read another news report about the UFO. Return to Mt. Panorama for the third
 								time and you’ll find Vademon; after a short conversation, he’ll go to the city to work
 								at the restaurant.
 
-								<p class="titletxt">Drill Tunnel and Native Forest</p>
+							<p class="titletxt">Drill Tunnel and Native Forest</p>
 
-								<p class="texto">1 – Return to Drill Tunnel one last time and go to the southernmost part of the cave;
+							<p class="texto">1 – Return to Drill Tunnel one last time and go to the southernmost part of
+								the cave;
 								the last Drimogemon has finally opened the passage to Leomon’s ancestral cave. Check the
 								SaberLeomon statue to obtain the Leomon Stone and give it to him in Gear Savana; Leomon
 								will go to the city to help Birdramon at the travel agency.
 
-								<p class="texto">2 – In Native Forest, check the tree trunk with a door and prepare to be attacked by
+							<p class="texto">2 – In Native Forest, check the tree trunk with a door and prepare to be
+								attacked by
 								Etemon. If you defeat him, he will go to the Digimon Bridge on the outskirts of town to
 								set up a new shop that sells only Gold Bananas.
 
-								<p class="titletxt">Factorial Town and Digimon Bridge</p>
+							<p class="titletxt">Factorial Town and Digimon Bridge</p>
 
-								<p class="texto">1 – Talk to Whamon at the port and go to Factorial Town. Enter the sewer there, talk to
+							<p class="texto">1 – Talk to Whamon at the port and go to Factorial Town. Enter the sewer
+								there, talk to
 								Numemon, and exit.
 
-								<p class="texto">2 – Enter Andromon’s house and talk to him. Now exit, go right, and talk to the
+							<p class="texto">2 – Enter Andromon’s house and talk to him. Now exit, go right, and talk to
+								the
 								Guardromons blocking your path. Talk to Andromon again, then go back and talk to the
 								Guardromons again, asking them about the shift schedule.
 
-								<p class="texto">3 – At exactly noon, the Guardromons will be gone. Go inside and look for Giromon; he’ll
+							<p class="texto">3 – At exactly noon, the Guardromons will be gone. Go inside and look for
+								Giromon; he’ll
 								fight you. After defeating him, go back and talk to Andromon to shut down the computers.
 
-								<p class="texto">4 – Enter the sewers again to face Numemon, one of the easiest bosses in the game. After
+							<p class="texto">4 – Enter the sewers again to face Numemon, one of the easiest bosses in
+								the game. After
 								defeating him, he’ll go to the city to open the secret item shop.
 
-								<p class="texto">5 – Go to Digimon Bridge and you’ll find Ninjamon; after defeating him, he’ll help
+							<p class="texto">5 – Go to Digimon Bridge and you’ll find Ninjamon; after defeating him,
+								he’ll help
 								Numemon at the secret shop.
 
-								<p class="texto">6 – Back in Factorial Town, talk to Andromon, leave, and return one day later. He’ll go
+							<p class="texto">6 – Back in Factorial Town, talk to Andromon, leave, and return one day
+								later. He’ll go
 								to the city but won’t do anything. Take the opportunity to also talk to Giromon; he’ll
 								join the group working at the city’s restaurant.
 
-								<p class="titletxt">Grey's Lord Mansion</p>
+							<p class="titletxt">Grey's Lord Mansion</p>
 
-								<p class="texto">1 – Remember that to enter here, you need a Virus-type Digimon. Look everywhere for
+							<p class="texto">1 – Remember that to enter here, you need a Virus-type Digimon. Look
+								everywhere for
 								Myotismon; you won’t be able to find him. As you’re leaving, Devimon will appear; go
 								back and enter through the door on the right that wouldn’t open before.
 
-								<p class="texto">2 – In the lab, find SkullGreymon and defeat him. In the previous room, Myotismon will
+							<p class="texto">2 – In the lab, find SkullGreymon and defeat him. In the previous room,
+								Myotismon will
 								be in the right corner of the screen; talk to him so that SkullGreymon and Myotismon
 								become available as opponents in the arena.
 
-								<p class="titletxt">Mt. Infinity</p>
+							<p class="titletxt">Mt. Infinity</p>
 
-								<p class="texto">1 – Talk to Jijimon; he’ll tell you he’s cleared the path to Mt. Infinity, which is near
+							<p class="texto">1 – Talk to Jijimon; he’ll tell you he’s cleared the path to Mt. Infinity,
+								which is near
 								the waterfall. When you exit, Airdramon will fight you—defeat him. Follow the path
 								indicated by Jijimon to enter Mt. Infinity.
 
-								<p class="texto">2 – Use the green beams of light to be teleported to the upper floors. Avoid unnecessary
+							<p class="texto">2 – Use the green beams of light to be teleported to the upper floors.
+								Avoid unnecessary
 								battles, as there are many bosses here. When you encounter Devimon, the first of them,
 								defeat him and continue forward.
 
-								<p class="texto">3 – Along the way, you’ll encounter Megadramon. The battle with him isn’t mandatory, but
+							<p class="texto">3 – Along the way, you’ll encounter Megadramon. The battle with him isn’t
+								mandatory, but
 								if you don’t defeat him, he won’t go to the city afterward.
 
-								<p class="texto">4 – Before entering the final room, you’ll have to defeat MetalGreymon. He isn’t a
+							<p class="texto">4 – Before entering the final room, you’ll have to defeat MetalGreymon. He
+								isn’t a
 								particularly difficult boss, but save your energy for the end.
 
-								<p class="texto">5 – Now it’s time to defeat Analogman, the game’s final boss. He’ll summon his
+							<p class="texto">5 – Now it’s time to defeat Analogman, the game’s final boss. He’ll summon
+								his
 								Mugendramon to fight you—a true war machine with powerful attacks that deal nearly 1,000
 								HP damage. Don’t give him a chance to attack you; use quick strikes and bring plenty of
 								health recovery items, as this will be a long battle. After defeating him, just enjoy
 								the game’s final cutscene.
 
-								<p class="titletxt">A Little Extra Work</p>
+							<p class="titletxt">A Little Extra Work</p>
 
-								<p class="texto">Think the game is over? If you thought so, you’re wrong. There are still a few things to
+							<p class="texto">Think the game is over? If you thought so, you’re wrong. There are still a
+								few things to
 								do before the true ending—secret Digimon are waiting for you to take them to the city.
 								Use the Memory Card to return to the DigiWorld and talk to Jijimon; he’ll tell you that
 								Analogman has returned.
 
-								<p class="titletxt">The extra Digimon:</p>
+							<p class="titletxt">The extra Digimon:</p>
 
-								<p class="texto">1 – Return to Mt. Infinity to the same spot where you faced Analogman to find an egg on
+							<p class="texto">1 – Return to Mt. Infinity to the same spot where you faced Analogman to
+								find an egg on
 								the ground; tap it to wake up Digitamamon, who will challenge you. He’s another powerful
 								boss—not as strong as Mugendramon, but he has more health (9999 HP). After defeating
 								him, he’ll head to the restaurant.
 
-								<p class="texto">2 – Go to Mt. Panorama to find Unimon lying wounded on the ground. Give him the medicine
+							<p class="texto">2 – Go to Mt. Panorama to find Unimon lying wounded on the ground. Give him
+								the medicine
 								item so he can go to the city to work at the shop.
 
-								<p class="texto">3 – After trading all items with all 3 Mojyamons in Freezeland, the last one will go to
+							<p class="texto">3 – After trading all items with all 3 Mojyamons in Freezeland, the last
+								one will go to
 								the city to work at the secret shop.
 
-								<p class="texto">4 – Go to Mt. Panorama to the area where the 3 MudFrigimons are located. Enter that
+							<p class="texto">4 – Go to Mt. Panorama to the area where the 3 MudFrigimons are located.
+								Enter that
 								screen and exit at different times until Mamemon appears; defeat him, and he will go
 								work at the town’s shop.
 
-								<p class="texto">5 – After taking Mamemon to the city, use the Gear Savana passage that leads to
+							<p class="texto">5 – After taking Mamemon to the city, use the Gear Savana passage that
+								leads to
 								Factorial Town. Enter and exit at different times until MetalMamemon appears; defeat
 								him. He will help Penguinmon in the curling game.
 
-								<p class="texto">6 – Talk to Angemon so he can tell you about the Digimon that appears every morning in
+							<p class="texto">6 – Talk to Angemon so he can tell you about the Digimon that appears every
+								morning in
 								Misty Trees. Go there at dawn to find Kokatorimon; after defeating him, he will build a
 								statue between Jijimon’s house and the bank.
 
-								<p class="texto">7 – Find Nanimon at Ogre Fortress; he’ll run away. Then find him again in Leomon’s
+							<p class="texto">7 – Find Nanimon at Ogre Fortress; he’ll run away. Then find him again in
+								Leomon’s
 								ancestral cave, in WaruMonzaemon’s room in Toy Town, Ancient Dino Region, and Factorial
 								Town. He’ll go to the city to help Agumon at the bank.
 
-								<p class="texto">8 – Get a Fire-type Digimon, since they hate the cold. Go to Freezeland and make the
+							<p class="texto">8 – Get a Fire-type Digimon, since they hate the cold. Go to Freezeland and
+								make the
 								poor thing sick. A good way to do this is to give it the Moldy Meat item, since this
 								item will automatically make it sick. To get it, go to the vending machine in the
 								Ancient Dino Region.
 
-								<p class="texto">Frigimon will appear and take you to his secret igloo. Then return to the igloo with
+							<p class="texto">Frigimon will appear and take you to his secret igloo. Then return to the
+								igloo with
 								your Digimon in good health, and Frigimon will go to the city to work at the restaurant.
 
-								<p class="titletxt">Analogman strikes again</p>
+							<p class="titletxt">Analogman strikes again</p>
 
-								<p class="texto">1 – You’ll have to find the Back Dimension. The location is random, so look in the most
+							<p class="texto">1 – You’ll have to find the Back Dimension. The location is random, so look
+								in the most
 								obvious spots, such as Ice Sanctuary, Grey Lord’s Mansion, and Ogre Fortress... If you
 								enter the correct location, you’ll automatically be transported to another dimension
 								(it’s almost like Mt. Infinity).
 
-								<p class="texto">2 – When you reach the end, you’ll have to face Mugendramon again. After defeating him,
+							<p class="texto">2 – When you reach the end, you’ll have to face Mugendramon again. After
+								defeating him,
 								you’ll discover that he was just a replica.
 
-								<p class="texto">3 – Go back and talk to Jijimon; he’ll give you a secret item and congratulate you. If
+							<p class="texto">3 – Go back and talk to Jijimon; he’ll give you a secret item and
+								congratulate you. If
 								you’ve done everything in the walkthrough, the city’s rating will be 100 points.
 
 						</div>
@@ -1241,8 +1371,10 @@
 					<div id="creditos-content-en" class="deto-content">
 						<div class="deto-scroll">
 							<p class="titletxt">About</p>
-							<p class="texto">I'm just a fan who decided to gather information about Digimon World 1 and organize it into a simple and nice interface. <a href="https://x.com/msandc7" target="_blank">Contact</a>
-							
+							<p class="texto">I'm just a fan who decided to gather information about Digimon World 1 and
+								organize it into a simple and nice interface. <a href="https://x.com/msandc7"
+									target="_blank">Contact</a>
+
 							<p class="titletxt">Credits</p>
 
 							<p class="texto">Digimon icons: <a
@@ -1257,7 +1389,7 @@
 							<p class="texto">Font: <a
 									href="https://www.spriters-resource.com/playstation/digimonworld/asset/33058/"
 									target="_blank">romsstar</a></p>
-									
+
 							<p class="texto">Digivolution Information: <a
 									href="https://www.neoseeker.com/forums/3196/t1715950-complete-digivolution-guide/"
 									target="_blank">Harceru</a></p>
@@ -1265,8 +1397,11 @@
 									href="https://docs.google.com/document/d/1Z5-7RhC42F51EdXtMpzbOZ9QL8WKxPLhHh3_-XMDPdU/edit?tab=t.0"
 									target="_blank">Ginoshie and SydMontague</a></p>
 
-									<p class="texto">Walkthrough: <a
-									href="https://pt.scribd.com/document/892188808/Detonado-01"
+									<p class="texto">Techniques Information: <a
+									href="https://docs.google.com/spreadsheets/d/19E7zgE2JJN4LQnlv9TNzenTaeld5OcRzC99EkiM80Cw/edit?gid=1702553086#gid=1702553086"
+									target="_blank">Ginoshie and SydMontague</a></p>
+
+							<p class="texto">Walkthrough: <a href="https://pt.scribd.com/document/892188808/Detonado-01"
 									target="_blank">HolyDigitamamon</a></p>
 
 							<p class="titletxt">Recommendations</p>
@@ -1292,8 +1427,8 @@
 					<img id="langIcon" src="images/us.webp" alt="">
 				</button>
 			</div>
-		</div>
-		<script src="script.js"></script>
+	</div>
+	<script src="script.js"></script>
 </body>
 
 </html>
