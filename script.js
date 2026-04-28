@@ -1510,7 +1510,7 @@ const enemyData = {
     moves: ["Aqua Magic", "Electric Cloud", "Static Elect", "Water Blit"],
   },
   MoriShellmon: {
-    maps: ["MIST01", "MIST02", "MIST03", "MIST04"],
+    maps: ["MIST01", "MIST03", "MIST04"],
     moves: ["Aqua Magic", "Charm Perfume", "Ice Statue", "Water Blit"],
   },
   Muchomon: {
@@ -6521,8 +6521,11 @@ function applyLang(lang) {
   }
 
   autoResizeMenuText();
-  if (window.techSystem?.selectedTech) {
+  if (window.techSystem?.selectedTech && currentMenuPage === "tech") {
     window.techSystem.buildChanceTable(window.techSystem.selectedTech);
+  } else {
+    const cw = document.getElementById("tech-chance-wrapper");
+    if (cw) cw.style.display = "none";
   }
   
 }
